@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 
     @BeforeMethod
     public void start()throws InterruptedException {
-        String chromeDriverPath = "/usr/bin/chromedriver";
+        String chromeDriverPath = "/usr/local/bin/chromedriver";
         System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         WebDriver driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
