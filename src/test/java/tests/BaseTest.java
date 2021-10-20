@@ -29,7 +29,9 @@ import java.util.concurrent.TimeUnit;
 
     @BeforeMethod
     public void start()throws InterruptedException {
-        WebDriverManager.chromedriver().setup();
+        String chromeDriverPath = "/usr/bin/chromedriver";
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
+        WebDriver driver = new ChromeDriver();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
