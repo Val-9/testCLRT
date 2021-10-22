@@ -33,6 +33,7 @@ import java.util.concurrent.TimeUnit;
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -40,6 +41,8 @@ import java.util.concurrent.TimeUnit;
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
         cartPage= PageFactory.initElements(driver, CartPage.class);
         checkOutPage= PageFactory.initElements(driver, CheckOutPage.class);
+
+
 
 
     }
