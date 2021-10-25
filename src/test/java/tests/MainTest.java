@@ -23,7 +23,7 @@ public class MainTest extends BaseTest {
                 .verifySearch("Краска")
                 .clearSearchInput()
                 .searchProduct("Ручка")
-                .verifySearch("Ручка");
+                .verifySearch("ручка");
 
     }
 
@@ -32,7 +32,7 @@ public class MainTest extends BaseTest {
         main
                 .goToMain()
                 .searchProduct("Ручка")
-                .verifySearch("Ручка")
+                .verifySearch("ручка")
                 .addToCart()
                 .verifyButtonInCart();
     }
