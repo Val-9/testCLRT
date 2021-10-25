@@ -29,15 +29,13 @@ import java.util.concurrent.TimeUnit;
 
     @BeforeMethod
     public void start()throws InterruptedException {
- /*       WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
+        driver = new ChromeDriver(options);
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
-        driver = new ChromeDriver(options);*/
-        String chromeDriverPath = "/usr/local/bin/chromedriver";
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-        ChromeOptions options = new ChromeOptions();
+  //      String chromeDriverPath = "/usr/local/bin/chromedriver";
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         WebDriver driver = new ChromeDriver();
