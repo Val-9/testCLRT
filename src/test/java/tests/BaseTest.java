@@ -29,18 +29,15 @@ import java.util.concurrent.TimeUnit;
 
     @BeforeMethod
     public void start()throws InterruptedException {
-        String chromeDriverPath = "/usr/local/bin/chromedriver";
-        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-        WebDriverManager.chromedriver().setup();
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
+        options.addArguments("start-maximized"); // open Browser in maximized mode
+        options.addArguments("disable-infobars"); // disabling infobars
+        options.addArguments("--disable-extensions"); // disabling extensions
+        options.addArguments("--disable-gpu"); // applicable to windows os only
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--no-sandbox"); // Bypass OS security model
+        WebDriver driver = new ChromeDriver(options);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
         cartPage= PageFactory.initElements(driver, CartPage.class);
