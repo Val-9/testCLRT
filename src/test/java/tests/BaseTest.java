@@ -34,11 +34,11 @@ import java.util.concurrent.TimeUnit;
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
-        options.addArguments("disable-infobars"); // disabling infobars
-        options.addArguments("--disable-extensions"); // disabling extensions
-        options.addArguments("--disable-gpu"); // applicable to windows os only
+   //     options.addArguments("disable-infobars"); // disabling infobars
+   //     options.addArguments("--disable-extensions"); // disabling extensions
+   //     options.addArguments("--disable-gpu"); // applicable to windows os only
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--remote-debugging-port=9222");
+  //      options.addArguments("--remote-debugging-port=9222");
         WebDriver driver = new FirefoxDriver(options);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
