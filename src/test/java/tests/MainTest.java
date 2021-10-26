@@ -19,10 +19,10 @@ public class MainTest extends BaseTest {
     public void SearchTest() throws InterruptedException {
         main
                 .goToMain()
-                .searchProduct("Краска")
-                .verifySearch("Краска")
+                .searchProduct("краска")
+                .verifySearch("краска")
                 .clearSearchInput()
-                .searchProduct("Ручка")
+                .searchProduct("ручка")
                 .verifySearch("ручка");
 
     }
@@ -31,8 +31,8 @@ public class MainTest extends BaseTest {
     public void addToCartAfterSearch () {
         main
                 .goToMain()
-                .searchProduct("Ручка")
-                .verifySearch("ручка")
+                .searchProduct("РУЧКА")
+                .verifySearch("РУЧКА")
                 .addToCart()
                 .verifyButtonInCart();
     }

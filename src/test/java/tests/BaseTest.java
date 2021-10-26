@@ -29,13 +29,15 @@ import java.util.concurrent.TimeUnit;
 
     @BeforeMethod
     public void start()throws InterruptedException {
+        String chromeDriverPath = "/usr/local/bin/chromedriver";
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         driver = new ChromeDriver(options);
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
-  //      options.addArguments("--headless");
-  //      String chromeDriverPath = "/usr/local/bin/chromedriver";
+        options.addArguments("--headless");
+
         WebDriver driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -43,9 +45,6 @@ import java.util.concurrent.TimeUnit;
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
         cartPage= PageFactory.initElements(driver, CartPage.class);
         checkOutPage= PageFactory.initElements(driver, CheckOutPage.class);
-
-
-
 
     }
 

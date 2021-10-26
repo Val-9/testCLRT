@@ -88,7 +88,7 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifySearch(String product) {
-        Assert.assertTrue(productNameSearch.getText().contains(product));
+        Assert.assertTrue(productNameSearch.getText().toLowerCase().contains(product.toLowerCase()));
         return this;
     }
 
