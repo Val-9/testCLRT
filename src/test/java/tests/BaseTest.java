@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
         options.addArguments("--disable-gpu"); // applicable to windows os only
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--no-sandbox"); // Bypass OS security model
-        options.addArguments("--headless"); // Bypass OS security model
+        options.addArguments("headless"); // Bypass OS security model
         WebDriver driver = new ChromeDriver(options);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
