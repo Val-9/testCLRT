@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 
     @BeforeMethod
     public void start()throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/geckodriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
