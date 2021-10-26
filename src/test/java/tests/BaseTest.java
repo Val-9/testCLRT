@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
@@ -29,8 +30,8 @@ import java.util.concurrent.TimeUnit;
 
     @BeforeMethod
     public void start()throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/geckodriver");
-        ChromeOptions options = new ChromeOptions();
+        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+        FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
         options.addArguments("disable-infobars"); // disabling infobars
@@ -38,7 +39,7 @@ import java.util.concurrent.TimeUnit;
         options.addArguments("--disable-gpu"); // applicable to windows os only
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--remote-debugging-port=9222");
-        WebDriver driver = new ChromeDriver(options);
+        WebDriver driver = new FirefoxDriver(options);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
         cartPage= PageFactory.initElements(driver, CartPage.class);
