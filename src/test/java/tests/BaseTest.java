@@ -38,8 +38,8 @@ import java.util.concurrent.TimeUnit;
 
     //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe"); ///usr/local/bin/geckodriver - ubuntu
         options.addArguments("--no-sandbox"); // Bypass OS security model
-    //    options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-      // options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--headless");
    //    options.addArguments("disable-infobars"); // disabling infobars
      //   options.addArguments("--disable-extensions"); // disabling extensions
      //   options.addArguments("--disable-gpu"); // applicable to windows os only
