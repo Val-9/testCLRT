@@ -40,7 +40,9 @@ import java.util.concurrent.TimeUnit;
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
-        WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub/static/resource/hub.html"), options);
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--remote-debugging-port=9222");
+        WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/"), options);
 
   /*          WebDriverManager.firefoxdriver().setup();
         //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
