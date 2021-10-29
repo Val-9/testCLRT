@@ -59,8 +59,9 @@ public class MainPage extends BasePage {
 
     // Test case # 1
         @Step ("Переход на главную")
-       public MainPage goToMain() {
+       public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
+        Thread.sleep(5000);
         return this;
     }
 
@@ -95,10 +96,11 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage addToCart() {
+    public MainPage addToCart() throws InterruptedException {
 
         WebElement buttonAddToCartDefault = driver.findElement(By.cssSelector("button[class='style_btnCart__3zXoU btnDefault'][type='submit']"));
         buttonAddToCartDefault.click();
+        Thread.sleep(2000);
         return this;
 
     }
