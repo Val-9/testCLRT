@@ -32,7 +32,9 @@ import java.util.concurrent.TimeUnit;
     public void start()throws InterruptedException {
 
 
-        WebDriverManager.firefoxdriver().setup();
+
+    //    WebDriverManager.firefoxdriver().setup();
+        System.setProperty("webdriver.gecko.driver","/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
 
@@ -46,8 +48,8 @@ import java.util.concurrent.TimeUnit;
         options.addArguments("--remote-debugging-port=9222");
    //
         //     WebDriver driver = new FirefoxDriver(options);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
+  //      driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+   //     driver.manage().window().maximize();
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
         cartPage= PageFactory.initElements(driver, CartPage.class);
