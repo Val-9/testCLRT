@@ -37,21 +37,14 @@ import java.util.concurrent.TimeUnit;
         public void start() throws InterruptedException, MalformedURLException {
       //  System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 
-   /*     FirefoxOptions options = new FirefoxOptions();
+       FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--remote-debugging-port=9222");
         options.setBinary("/usr/local/bin/geckodriver");
+        WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), options);
 
-   //     WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), options);*/
-        WebDriverManager.chromedriver().setup();
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox"); // Bypass OS security model
-        options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        driver = new ChromeDriver(options);
-        driver.get("google.com");
   /*          WebDriverManager.firefoxdriver().setup();
         //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
             FirefoxOptions options = new FirefoxOptions();
