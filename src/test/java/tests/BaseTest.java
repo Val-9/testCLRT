@@ -69,7 +69,7 @@ import java.util.concurrent.TimeUnit;
      //   capabilities.setCapability("console", true); // To capture console logs
 
         try {
-            driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), capabilities);
+            driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/"), capabilities);
         } catch (MalformedURLException e) {
             System.out.println("Invalid grid URL");
         } catch (Exception e) {
