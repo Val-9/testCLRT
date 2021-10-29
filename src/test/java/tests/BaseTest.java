@@ -40,8 +40,9 @@ import java.util.concurrent.TimeUnit;
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--remote-debugging-port=9222");
+        options.setBinary("/usr/local/bin/geckodriver");
         WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), options);
-
+        driver.get("https://www.browserstack.com/guide/difference-between-selenium-remotewebdriver-and-webdriver");
 
 
   /*          WebDriverManager.firefoxdriver().setup();
