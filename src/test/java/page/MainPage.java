@@ -61,14 +61,15 @@ public class MainPage extends BasePage {
         @Step ("Переход на главную")
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
-        Thread.sleep(5000);
+        Thread.sleep(10000);
+        logo.isDisplayed();
         return this;
     }
 
     // Test case # 1
     @Step("Проверка главной страницы.")
     public MainPage verifyMainPage() {
-        logo.isDisplayed();
+
         cartEmpty.isDisplayed();
         Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/ca");
         Assert.assertTrue(header.getText().contains(headerText));
