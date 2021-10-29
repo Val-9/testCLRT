@@ -41,7 +41,8 @@ import java.util.concurrent.TimeUnit;
             options.addArguments("--disable-gpu"); // applicable to windows os only
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
             options.addArguments("--remote-debugging-port=4444");
-            WebDriver driver = new FirefoxDriver(options);
+            driver = new FirefoxDriver(options);
+
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
         cartPage= PageFactory.initElements(driver, CartPage.class);
