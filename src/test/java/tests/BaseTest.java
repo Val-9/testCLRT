@@ -29,21 +29,19 @@ import java.util.concurrent.TimeUnit;
 
 
     @BeforeMethod
-    public void start(){
 
-
-
-    //    WebDriverManager.firefoxdriver().setup();
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/geckodriver");
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox"); // Bypass OS security model
-        options.addArguments("--headless");
-        options.addArguments("disable-infobars"); // disabling infobars
-        options.addArguments("--disable-extensions"); // disabling extensions
-        options.addArguments("--disable-gpu"); // applicable to windows os only
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--remote-debugging-port=9222");
-        WebDriver driver = new ChromeDriver(options);
+        public void start()throws InterruptedException {
+        //    WebDriverManager.firefoxdriver().setup();
+            System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+            FirefoxOptions options = new FirefoxOptions();
+            options.addArguments("--no-sandbox"); // Bypass OS security model
+            options.addArguments("--headless");
+            options.addArguments("disable-infobars"); // disabling infobars
+            options.addArguments("--disable-extensions"); // disabling extensions
+            options.addArguments("--disable-gpu"); // applicable to windows os only
+            options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+            options.addArguments("--remote-debugging-port=9222");
+            WebDriver driver = new FirefoxDriver(options);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
         cartPage= PageFactory.initElements(driver, CartPage.class);
