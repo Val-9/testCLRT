@@ -70,7 +70,7 @@ public class MainPage extends BasePage {
     public MainPage verifyMainPage() {
         logo.isDisplayed();
         cartEmpty.isDisplayed();
-        Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/cart");
+        Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/ca");
         Assert.assertTrue(header.getText().contains(headerText));
         Assert.assertEquals(categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
         Assert.assertEquals(headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
