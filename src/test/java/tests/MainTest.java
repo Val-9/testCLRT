@@ -1,18 +1,29 @@
 package tests;
 import io.qameta.allure.Step;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-
+import page.MainPage;
 
 
 public class MainTest extends BaseTest {
     @Step("тест")
     @Test(groups = {"smoke"})
 
+    public void verifyMainPageNew() {
+        String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
+        main.cartEmpty .isDisplayed();
+        Assert.assertEquals(main.cartEmpty.getAttribute("href"), "https://color-it.ua/ca");
+        Assert.assertTrue(main.header.getText().contains(headerText));
+        Assert.assertEquals(main.categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
+        Assert.assertEquals(main.headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
+
+    }
+    @Test
     public void MainPageTest() throws InterruptedException {
 
         main
-                .goToMain()
-                .verifyMainPage();
+                .goToMain();
+                this.verifyMainPageNew();
     }
 
     @Test (groups = {"smoke"})
