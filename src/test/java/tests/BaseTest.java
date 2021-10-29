@@ -31,8 +31,8 @@ import java.util.concurrent.TimeUnit;
     @BeforeMethod
 
         public void start()throws InterruptedException {
-        //    WebDriverManager.firefoxdriver().setup();
-            System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+            WebDriverManager.firefoxdriver().setup();
+        //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("--no-sandbox"); // Bypass OS security model
             options.addArguments("--headless");
