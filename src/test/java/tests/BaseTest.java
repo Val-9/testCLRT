@@ -35,14 +35,13 @@ import java.util.concurrent.TimeUnit;
     @BeforeMethod
 
         public void start() throws InterruptedException, MalformedURLException {
-      //  System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+      /*  System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
 
-       FirefoxOptions options = new FirefoxOptions();
+        FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--remote-debugging-port=9222");
-        options.setBinary("/usr/local/bin/geckodriver");
         WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), options);
 
   /*          WebDriverManager.firefoxdriver().setup();
@@ -57,6 +56,27 @@ import java.util.concurrent.TimeUnit;
             options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
             options.addArguments("--remote-debugging-port=9222");
          //   driver = new FirefoxDriver(options);      */
+
+
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "firefox");
+        capabilities.setCapability("version", "93.0");
+        capabilities.setCapability("platform", "linux"); // If this cap isn't specified, it will just get any available one
+ //       capabilities.setCapability("network", true); // To enable network logs
+   //     capabilities.setCapability("visual", true); // To enable step by step screenshot
+     //   capabilities.setCapability("video", true); // To enable video recording
+     //   capabilities.setCapability("console", true); // To capture console logs
+
+        try {
+            driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), capabilities);
+        } catch (MalformedURLException e) {
+            System.out.println("Invalid grid URL");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
 
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage= PageFactory.initElements(driver, ProductCardPage.class);
