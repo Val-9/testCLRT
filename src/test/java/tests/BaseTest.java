@@ -43,7 +43,7 @@ import java.util.concurrent.TimeUnit;
    //    options.addArguments("disable-infobars"); // disabling infobars
      //   options.addArguments("--disable-extensions"); // disabling extensions
      //   options.addArguments("--disable-gpu"); // applicable to windows os only
-  //      options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--remote-debugging-port=9222");
    //
         //     WebDriver driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
