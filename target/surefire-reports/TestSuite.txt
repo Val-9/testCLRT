@@ -1,4 +1,52 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 267.077 s - in TestSuite
+Tests run: 17, Failures: 7, Errors: 0, Skipped: 9, Time elapsed: 77.167 s <<< FAILURE! - in TestSuite
+tests.MainTest.close  Time elapsed: 9.025 s  <<< FAILURE!
+java.lang.NullPointerException
+
+tests.CartTest.verifyCartPage  Time elapsed: 6.823 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: a[class='style_name__btju7 linkDefault']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-beta-3', revision: '5d108f9a67'
+System info: host: 'DESKTOP-789NBJF', ip: '169.254.121.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [a4469ab5-e97b-4535-98d6-997fdfa53d16, findElement {using=css selector, value=a[class='style_name__btju7 linkDefault']}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:debuggerAddress: localhost:9222, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 19720, moz:profile: C:\Users\M3800\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:9222/devtool..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: a4469ab5-e97b-4535-98d6-997fdfa53d16
+	at tests.CartTest.verifyCartPage(CartTest.java:16)
+
+tests.CartTest.close  Time elapsed: 6.856 s  <<< FAILURE!
+java.lang.NullPointerException
+
+tests.CheckOutTest.verifyCheckOutPage  Time elapsed: 7.711 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: div[class='style_heading__3jKOc heading']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-beta-3', revision: '5d108f9a67'
+System info: host: 'DESKTOP-789NBJF', ip: '169.254.121.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [96e8195d-e468-4df5-b395-9c88c6e5bc41, findElement {using=css selector, value=div[class='style_heading__3jKOc heading']}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:debuggerAddress: localhost:9222, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 13220, moz:profile: C:\Users\M3800\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:9222/devtool..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: 96e8195d-e468-4df5-b395-9c88c6e5bc41
+	at tests.CheckOutTest.verifyCheckOutPage(CheckOutTest.java:16)
+
+tests.CheckOutTest.close  Time elapsed: 7.722 s  <<< FAILURE!
+java.lang.NullPointerException
+
+tests.End2End.end2end  Time elapsed: 5.514 s  <<< FAILURE!
+org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: a[class='style_name__btju7 linkDefault']
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.0.0-beta-3', revision: '5d108f9a67'
+System info: host: 'DESKTOP-789NBJF', ip: '169.254.121.244', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.10'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Command: [bb3fbcd4-ab8a-4072-a10c-ed31f5052b80, findElement {using=css selector, value=a[class='style_name__btju7 linkDefault']}]
+Capabilities {acceptInsecureCerts: true, browserName: firefox, browserVersion: 93.0, javascriptEnabled: true, moz:accessibilityChecks: false, moz:buildID: 20210927210923, moz:debuggerAddress: localhost:9222, moz:geckodriverVersion: 0.30.0, moz:headless: false, moz:processID: 13436, moz:profile: C:\Users\M3800\AppData\Loca..., moz:shutdownTimeout: 60000, moz:useNonSpecCompliantPointerOrigin: false, moz:webdriverClick: true, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, platformVersion: 10.0, proxy: Proxy(), se:cdp: ws://localhost:9222/devtool..., se:cdpVersion: 85, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify}
+Session ID: bb3fbcd4-ab8a-4072-a10c-ed31f5052b80
+	at tests.End2End.end2end(End2End.java:14)
+
+tests.End2End.close  Time elapsed: 5.528 s  <<< FAILURE!
+java.lang.NullPointerException
+

@@ -28,11 +28,11 @@ public class MainTest extends BaseTest {
     }
 
     @Test
-    public void addToCartAfterSearch () {
+    public void addToCartAfterSearch () throws InterruptedException {
         main
                 .goToMain()
-                .searchProduct("РУЧКА")
-                .verifySearch("РУЧКА")
+                .searchProduct("ручка")
+                .verifySearch("ручка")
                 .addToCart()
                 .verifyButtonInCart();
     }

@@ -12,6 +12,7 @@ public class CheckOutPage extends BasePage {
     @FindBy(css = "input[id='phone'][name = 'phone']")
     public WebElement senderPhoneInput;
 
+
     @FindBy(css = "input[id='name'][name = 'name']")
     public WebElement senderNameInput;
 
@@ -26,6 +27,7 @@ public class CheckOutPage extends BasePage {
 
     @FindBy(css = "#phone")
     public WebElement recipientPhoneInput;
+    String recipientPhoneInputCssValue = "#phone";
 
     @FindBy(css = "button[class='style_submit__3_bTq btnDefault']")
     public WebElement submitButton;
@@ -38,6 +40,7 @@ public class CheckOutPage extends BasePage {
 
     @FindBy(css = "button[class='style_addBtn__1a-1o linkBtn']")
     public WebElement addRecipient; // добавить получателя
+    String addRecipientCssValue = "button[class='style_addBtn__1a-1o linkBtn']";
 
     @FindBy(css = "div[id='payment']")
     public WebElement choosePayment; // Выбор оплаты
@@ -101,7 +104,8 @@ public class CheckOutPage extends BasePage {
 
     // Страница checkOut/user
 
-    public CheckOutPage senderPhone(String data) {
+    public CheckOutPage senderPhone(String data) throws InterruptedException {
+        Thread.sleep(5000);
         senderPhoneInput.click();
         senderPhoneInput.sendKeys(Keys.HOME, data);
         return this;
@@ -132,12 +136,13 @@ public class CheckOutPage extends BasePage {
     // Страница checkOut . Добавить получателя
 
     public CheckOutPage addRecipient() {
-        waitVisibility(By.cssSelector("button[class='style_addBtn__1a-1o linkBtn']"));
+        waitVisibility(By.cssSelector(addRecipientCssValue));
         addRecipient.click();
         return this;
     }
 
     public CheckOutPage recipientPhone(String data) {
+        waitVisibility(By.cssSelector(recipientPhoneInputCssValue));
         recipientPhoneInput.click();
         recipientPhoneInput.sendKeys(Keys.HOME, data);
         return this;

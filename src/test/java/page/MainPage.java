@@ -21,8 +21,9 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "a[class='style_name__btju7 linkDefault']")
     public WebElement productNameSearch;
+    String productNameSearchCssValue = "a[class='style_name__btju7 linkDefault']";
 
-    @FindBy(css = "span[class='style_name__1d6ZC']")
+    @FindBy(css = "buttonInCart")
     public WebElement productNameOnMain;
 
     @FindBy(css = "span[class='style_logo__XsOQq'][title='Color-it']")
@@ -39,6 +40,7 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "a[class='style_btnCart__3zXoU btnDefault style_btnCartIn_art__nstr3'][title='В КОРЗИНЕ']")
     public WebElement buttonInCart;
+    String buttonInCartCssValue = "a[class='style_btnCart__3zXoU btnDefault style_btnCartIn_art__nstr3'][title='В КОРЗИНЕ']";
 
     @FindBy(css = "a[class='style_name__btju7 linkDefault']")
     public WebElement productNameInCart;
@@ -74,9 +76,10 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage searchProduct(String product) {
+    public MainPage searchProduct(String product) throws InterruptedException {
         inputSearch.click();
         inputSearch.sendKeys(product);
+        waitVisibility(By.cssSelector(productNameSearchCssValue));
         return this;
     }
 
@@ -88,7 +91,7 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifySearch(String product) {
-        Assert.assertTrue(productNameSearch.getText().toLowerCase().contains(product.toLowerCase()));
+        Assert.assertTrue(productNameSearch.getText().toLowerCase().contains(product));
         return this;
     }
 
@@ -101,8 +104,10 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifyButtonInCart() {
+        waitVisibility(By.cssSelector(buttonInCartCssValue));
         Assert.assertEquals(buttonInCart.getAttribute("className"), "style_btnCart__3zXoU btnDefault style_btnCartIn_art__nstr3");
         Assert.assertEquals(buttonInCart.getAttribute("href"), "https://color-it.ua/cart");
+        Assert.assertEquals(buttonInCart.getAttribute("title"), "В КОРЗИНЕ");
         return this;
     }
 
@@ -121,9 +126,11 @@ public class MainPage extends BasePage {
     }
 
     public MainPage goToCart() throws InterruptedException {
-        String textNameOnMain2 = productNameOnMain.getText();
+        buttonInCart.isDisplayed();
+//        String textNameOnMain2 = productNameOnMain.getText();
         buttonInCart.click();
-        String textNameInCart = productNameInCart.getText();
+ //       String textNameInCart = productNameInCart.getText();
+
 
         return this;
     }

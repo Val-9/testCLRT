@@ -10,6 +10,7 @@ import org.testng.Assert;
 
 public class CartPage extends BasePage {
 
+
     @FindBy(css = "div[class='style_heading__1pFPz heading']")
     WebElement h1;
 
@@ -28,6 +29,8 @@ public class CartPage extends BasePage {
 
     @FindBy(css = "div[class='style_heading__3jKOc heading']")
     WebElement h1CheckOut;
+
+    String senderPhoneInputCssValue = "input[id='phone'][name = 'phone']";
 
     public CartPage(WebDriver driver) {
 
@@ -56,10 +59,10 @@ public class CartPage extends BasePage {
             else if (intAmount<1500) {
             minAmountNotification.isDisplayed();
             checkOutButton.click();
-            Thread.sleep(5000);
             Assert.assertEquals(driver.getTitle(), "Корзина");
             System.out.println(driver.getTitle());
         }
+        waitVisibility(By.cssSelector(senderPhoneInputCssValue));
             return this;
         }
 
