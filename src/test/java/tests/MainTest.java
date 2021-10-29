@@ -8,7 +8,7 @@ public class MainTest extends BaseTest {
     @Step("тест")
     @Test(groups = {"smoke"})
 
-    public void MainPageTest() {
+    public void MainPageTest() throws InterruptedException {
 
         main
                 .goToMain()
