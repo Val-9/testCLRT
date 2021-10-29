@@ -36,7 +36,7 @@ import java.util.concurrent.TimeUnit;
         FirefoxOptions options = new FirefoxOptions();
         driver = new FirefoxDriver(options);
 
-    //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe"); ///usr/local/bin/geckodriver - ubuntu
+       System.setProperty("webdriver.gecko.driver","/usr/local/bin/geckodriver" ); //"C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe"
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--headless");
