@@ -40,8 +40,8 @@ import java.util.concurrent.TimeUnit;
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--remote-debugging-port=9222");
-        WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444"), options);
-        ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
+        WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), options);
+
 
 
   /*          WebDriverManager.firefoxdriver().setup();
