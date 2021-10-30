@@ -24,7 +24,8 @@ public class MainTest extends BaseTest {
     private void verifyMainPageNew() {
 
         String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
-        System.out.println(cartEmpty);
+        System.out.println(cartEmpty.getAttribute("href"));
+        System.out.println(cartEmpty.getAttribute("href"));
         Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/ca");
         Assert.assertTrue(header.getText().contains(headerText));
         Assert.assertEquals(categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
