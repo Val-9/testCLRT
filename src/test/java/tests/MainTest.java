@@ -51,8 +51,8 @@ public class MainTest extends BaseTest {
 
         main
                 .goToMain();
-
-       WebElement cartEmpty2 = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
+        WebElement cartEmpty2 = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
+        Assert.assertEquals(cartEmpty2.getAttribute("href"), "https://color-it.ua/cart");
     }
 
 
