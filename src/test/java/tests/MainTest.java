@@ -1,5 +1,6 @@
 package tests;
 import io.qameta.allure.Step;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -22,22 +23,27 @@ public class MainTest extends BaseTest {
     public WebElement headerOrderInfo;
 
     public void verifyMainPageNew() {
-
+        WebElement cartEmpty = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
         String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
         System.out.println(cartEmpty.getAttribute("href"));
-        System.out.println(cartEmpty.getAttribute("href"));
         Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/ca");
-        Assert.assertTrue(header.getText().contains(headerText));
-        Assert.assertEquals(categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
-        Assert.assertEquals(headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
 
     }
+
+    @Test
+    public void MainPageTest2() throws InterruptedException {
+
+        main
+                .goToMain();
+        this.verifyMainPageNew();
+    }
+
     @Test
     public void MainPageTest() throws InterruptedException {
 
         main
-                .goToMain();
-                this.verifyMainPageNew();
+                .goToMain()
+                .verifyMainPage();
     }
 
     @Test (groups = {"smoke"})
