@@ -51,8 +51,7 @@ public class MainTest extends BaseTest {
     @Test
     public void MainPageTest4() throws InterruptedException {
 
-        main
-                .goToMain();
+        driver.get("https://color-it.ua");
         WebElement cartEmpty2 = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
         Assert.assertEquals(cartEmpty2.getAttribute("href"), "https://color-it.ua/cart");
     }
