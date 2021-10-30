@@ -16,8 +16,7 @@ public class MainTest extends BaseTest {
         Assert.assertEquals(main.headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
 
     }
-    @Step("тест")
-    @Test(groups = {"smoke"})
+    @Test
     public void MainPageTest() throws InterruptedException {
 
         main

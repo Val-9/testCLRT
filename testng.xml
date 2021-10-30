@@ -7,8 +7,11 @@
 
         <classes>
             <class name="tests.Test"></class>
-
-
+            <class name="tests.MainTest">
+            <methods>
+                <include name="MainPageTest" />
+            </methods>
+            </class>
         </classes>
     </test>
 </suite>
