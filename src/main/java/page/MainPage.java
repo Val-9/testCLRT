@@ -2,6 +2,7 @@ package page;
 
 import io.qameta.allure.Step;
 import org.openqa.selenium.*;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
@@ -61,8 +62,7 @@ public class MainPage extends BasePage {
         @Step ("Переход на главную")
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
-        Thread.sleep(10000);
-            System.out.println("на главную зашло");
+        System.out.println("на главную зашло");
         return this;
     }
 
