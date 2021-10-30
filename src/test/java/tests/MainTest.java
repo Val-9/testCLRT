@@ -1,16 +1,19 @@
 package tests;
 import io.qameta.allure.Step;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import page.MainPage;
 
 
 public class MainTest extends BaseTest {
-
+    @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
+    public WebElement cartEmpty;
 
     public void verifyMainPageNew() {
         String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
-        Assert.assertEquals(main.cartEmpty.getAttribute("href"), "https://color-it.ua/ca");
+        Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/ca");
         Assert.assertTrue(main.header.getText().contains(headerText));
         Assert.assertEquals(main.categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
         Assert.assertEquals(main.headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
