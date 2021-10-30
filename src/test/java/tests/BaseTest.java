@@ -38,7 +38,7 @@ public class BaseTest {
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--remote-debugging-port=9222");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver = new FirefoxDriver(options);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);

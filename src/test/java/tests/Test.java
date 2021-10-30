@@ -17,6 +17,7 @@ public class Test extends BaseTest {
     public void TestJenkins () throws InterruptedException {
 
         driver.get("https://color-it.ua");
+        main.waitVisibility(By.cssSelector(".style_link__5n7xe"));
         WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
         System.out.println(seeAll.getText());
         main.quantity.click();
