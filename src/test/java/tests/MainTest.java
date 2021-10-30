@@ -8,19 +8,21 @@ import org.testng.annotations.Test;
 import page.MainPage;
 
 
+
 public class MainTest extends BaseTest {
 
-    @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
-    private WebElement cartEmpty;
+
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(1)")
-    private WebElement header;
+    public WebElement header;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(2)")
-    private WebElement categoryMenu;
+    public WebElement categoryMenu;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(3)")
-    private WebElement headerOrderInfo;
+    public WebElement headerOrderInfo;
+    @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
+    public WebElement cartEmpty;
 
     private void verifyMainPageNew() {
         WebElement cartEmpty = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
