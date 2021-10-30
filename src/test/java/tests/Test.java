@@ -8,22 +8,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.FindBy;
 
-public class Test {
+public class Test extends BaseTest {
 
     @org.testng.annotations.Test
     public void TestJenkins (){
 
-        WebDriverManager.firefoxdriver().setup();
-        FirefoxOptions options = new FirefoxOptions();
-              options.addArguments("--no-sandbox"); // Bypass OS security model
-              options.addArguments("--headless");
-              options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-              options.addArguments("--remote-debugging-port=9222");
-       WebDriver driver = new FirefoxDriver(options);
-       driver.get("https://www.google.com");
+
+        driver.get("https://www.google.com");
         WebElement inputSearch = driver.findElement(By.cssSelector("input[class = 'gLFyf gsfi']"));
         System.out.println(inputSearch.getAttribute("name"));
         System.out.println("TEST TEST NO LaUNCH BROWSER");
 
     }
 }
+
