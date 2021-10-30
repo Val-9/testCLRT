@@ -13,7 +13,7 @@ public class Test {
     @org.testng.annotations.Test
     public void TestJenkins (){
 
-        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+        WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
               options.addArguments("--no-sandbox"); // Bypass OS security model
               options.addArguments("--headless");
