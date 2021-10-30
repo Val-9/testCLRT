@@ -31,7 +31,7 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "span[class='style_logo__XsOQq'][title='Color-it']")
     public WebElement logo;
-@FindBy
+
     @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
     public WebElement cartEmpty;
 
