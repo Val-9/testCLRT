@@ -10,7 +10,7 @@ import page.MainPage;
 public class MainTest extends BaseTest {
 
     @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
-    public WebElement cartEmpty;
+    private WebElement cartEmpty;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(1)")
     public WebElement header;
@@ -21,8 +21,10 @@ public class MainTest extends BaseTest {
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(3)")
     public WebElement headerOrderInfo;
 
-    public void verifyMainPageNew() {
+    private void verifyMainPageNew() {
+
         String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
+        System.out.println(cartEmpty);
         Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/ca");
         Assert.assertTrue(header.getText().contains(headerText));
         Assert.assertEquals(categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
@@ -33,8 +35,8 @@ public class MainTest extends BaseTest {
     public void MainPageTest() throws InterruptedException {
 
         main
-                .goToMain()
-                .verifyMainPage();
+                .goToMain();
+                this.verifyMainPageNew();
     }
 
     @Test (groups = {"smoke"})
