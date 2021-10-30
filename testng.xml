@@ -10,6 +10,7 @@
             <class name="tests.MainTest">
             <methods>
                 <include name="MainPageTest" />
+                <include name="MainPageTest2" />
             </methods>
             </class>
         </classes>
