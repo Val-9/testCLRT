@@ -21,7 +21,7 @@ public class MainTest extends BaseTest {
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(3)")
     public WebElement headerOrderInfo;
 
-    private void verifyMainPageNew() {
+    public void verifyMainPageNew() {
 
         String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
         System.out.println(cartEmpty.getAttribute("href"));
