@@ -22,7 +22,7 @@ public class MainTest extends BaseTest {
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(3)")
     public WebElement headerOrderInfo;
     @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
-    public WebElement cartEmpty;
+    private WebElement cartEmpty;
 
     private void verifyMainPageNew() {
         WebElement cartEmpty = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
@@ -53,7 +53,7 @@ public class MainTest extends BaseTest {
 
         driver.get("https://color-it.ua");
         Thread.sleep(3000);
-        WebElement cartEmpty2 = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
+        WebElement cartEmpty2 = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false']"));
         Assert.assertEquals(cartEmpty2.getAttribute("href"), "https://color-it.ua/cart");
     }
 

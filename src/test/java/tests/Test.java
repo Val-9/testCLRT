@@ -15,7 +15,7 @@ public class Test extends BaseTest {
 
 
     @org.testng.annotations.Test
-    public void TestJenkins (){
+    public void TestJenkins () throws InterruptedException {
 
 
         driver.get("https://www.google.com");
@@ -24,6 +24,7 @@ public class Test extends BaseTest {
         System.out.println(inputSearch.getAttribute("name"));
         System.out.println("TEST TEST NO LaUNCH BROWSER");
         driver.get("https://color-it.ua");
+        Thread.sleep(5000);
         WebElement input = driver.findElement(By.cssSelector("input[class='style_input__352mX']"));
         Assert.assertEquals(input.getAttribute("placeholder"), "Поиск");
 
