@@ -62,7 +62,7 @@ public class MainPage extends BasePage {
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
         Thread.sleep(10000);
-        logo.isDisplayed();
+            System.out.println("на главную зашло");
         return this;
     }
 
