@@ -17,7 +17,7 @@ public class Test {
               options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
               options.addArguments("--remote-debugging-port=9222");
        WebDriver driver = new FirefoxDriver(options);
-       driver.get("www.google.com");
+       driver.get("https://www.google.com");
         System.out.println("TEST TEST NO LaUNCH BROWSER");
 
     }
