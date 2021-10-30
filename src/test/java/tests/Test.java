@@ -22,6 +22,7 @@ public class Test extends BaseTest {
         WebElement input = driver.findElement(By.cssSelector("h3[class = 'style_heading__306pO']"));
         Assert.assertEquals(input.getText(), "Новинки");
     }
+    @org.testng.annotations.Test
     public void TestJenkins2 (){
 
         driver.get("https://www.google.com");
