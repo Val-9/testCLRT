@@ -6,8 +6,7 @@ import page.MainPage;
 
 
 public class MainTest extends BaseTest {
-    @Step("тест")
-    @Test(groups = {"smoke"})
+
 
     public void verifyMainPageNew() {
         String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
@@ -17,7 +16,8 @@ public class MainTest extends BaseTest {
         Assert.assertEquals(main.headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
 
     }
-    @Test
+    @Step("тест")
+    @Test(groups = {"smoke"})
     public void MainPageTest() throws InterruptedException {
 
         main
