@@ -63,13 +63,14 @@ public class MainPage extends BasePage {
         super(driver) ;
     }
 
+    By loginButton = By.xpath("style_btnLink__39usR linkBtn");
 
     // Test case # 1
         @Step ("Переход на главную")
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
         System.out.println("Title is :" + " " + driver.getTitle());
-            System.out.println(driver.findElement(test).getText());
+        System.out.println(driver.findElement(loginButton).getText());
         return this;
     }
 
