@@ -13,22 +13,21 @@ public class Test extends BaseTest {
 
 
 
-
     @org.testng.annotations.Test
     public void TestJenkins () throws InterruptedException {
 
-        driver.get("https://color-it.ua");
-        Thread.sleep(5000);
-        WebElement input = driver.findElement(By.cssSelector("h3[class = 'style_heading__306pO']"));
-        Assert.assertEquals(input.getText(), "Новинки");
+        main.goToMain();
+        WebElement h3 = driver.findElement(By.cssSelector(".style_heading__306pO"));
+        Assert.assertEquals(h3.getText(), "НОВИНКИ");
     }
+
     @org.testng.annotations.Test
-    public void TestJenkins2 (){
+    public void TestJenkins2 () throws InterruptedException {
 
         driver.get("https://www.google.com");
-        WebElement inputSearch = driver.findElement(By.cssSelector("input[class = 'gLFyf gsfi']"));
-        Assert.assertEquals(inputSearch.getAttribute("name"), "w");
-        System.out.println(inputSearch.getAttribute("name"));
+        WebElement input = driver.findElement(By.name("q"));
+        Assert.assertEquals(input.getAttribute("name"), "q");
+        System.out.println(input.getAttribute("name"));
         System.out.println("Google TEST Success");
 
     }

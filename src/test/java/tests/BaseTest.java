@@ -2,9 +2,11 @@ package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.*;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -25,11 +27,13 @@ public class BaseTest {
     public CheckOutPage checkOutPage;
     String node = "http://http://jenkins01.color-it.ua:4444/wd/hub";
 
+
     @BeforeMethod
 
     public void  start() {
-
-        WebDriverManager.firefoxdriver().setup();
+      //  WebDriverManager.firefoxdriver().setup();
+      //  System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
@@ -45,7 +49,6 @@ public class BaseTest {
 
 
       /*  System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
@@ -54,14 +57,6 @@ public class BaseTest {
         WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), options);*/
 
 
-        //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-
-
-        //    options.addArguments("disable-infobars"); // disabling infobars
-        //    options.addArguments("--disable-extensions"); // disabling extensions
-        //      options.addArguments("--disable-gpu"); // applicable to windows os only
-        // overcome limited resource problems
-        //   driver = new FirefoxDriver(options);      */
 
 
         //     DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -70,9 +65,6 @@ public class BaseTest {
         //     capabilities.setCapability("visual", true); // To enable step by step screenshot
         //   capabilities.setCapability("video", true); // To enable video recording
         //   capabilities.setCapability("console", true); // To capture console logs
-
-
-
 
     @AfterMethod
     public void close() {
