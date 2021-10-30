@@ -10,7 +10,7 @@ import page.MainPage;
 public class MainTest extends BaseTest {
 
     @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
-    private WebElement cartEmpty;
+    public WebElement cartEmpty;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(1)")
     public WebElement header;
