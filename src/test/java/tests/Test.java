@@ -17,16 +17,18 @@ public class Test extends BaseTest {
     @org.testng.annotations.Test
     public void TestJenkins () throws InterruptedException {
 
+        driver.get("https://color-it.ua");
+        Thread.sleep(5000);
+        WebElement input = driver.findElement(By.cssSelector("h3[class = 'style_heading__306pO']"));
+        Assert.assertEquals(input.getText(), "Новинки");
+    }
+    public void TestJenkins2 (){
 
         driver.get("https://www.google.com");
         WebElement inputSearch = driver.findElement(By.cssSelector("input[class = 'gLFyf gsfi']"));
-        Assert.assertEquals(inputSearch.getAttribute("name"), "q");
+        Assert.assertEquals(inputSearch.getAttribute("name"), "w");
         System.out.println(inputSearch.getAttribute("name"));
-        System.out.println("TEST TEST NO LaUNCH BROWSER");
-        driver.get("https://color-it.ua");
-        Thread.sleep(5000);
-        WebElement input = driver.findElement(By.cssSelector("input[class='style_input__352mX']"));
-        Assert.assertEquals(input.getAttribute("placeholder"), "Поиск");
+        System.out.println("Google TEST Success");
 
     }
 }
