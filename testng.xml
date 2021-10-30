@@ -11,6 +11,8 @@
             <methods>
                 <include name="MainPageTest" />
                 <include name="MainPageTest2" />
+                <include name="MainPageTest3" />
+                <include name="MainPageTest4" />
             </methods>
             </class>
         </classes>

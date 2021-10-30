@@ -11,18 +11,18 @@ import page.MainPage;
 public class MainTest extends BaseTest {
 
     @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
-    public WebElement cartEmpty;
+    private WebElement cartEmpty;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(1)")
-    public WebElement header;
+    private WebElement header;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(2)")
-    public WebElement categoryMenu;
+    private WebElement categoryMenu;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(3)")
-    public WebElement headerOrderInfo;
+    private WebElement headerOrderInfo;
 
-    public void verifyMainPageNew() {
+    private void verifyMainPageNew() {
         WebElement cartEmpty = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
         String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
         System.out.println(cartEmpty.getAttribute("href"));
@@ -37,6 +37,24 @@ public class MainTest extends BaseTest {
                 .goToMain();
         this.verifyMainPageNew();
     }
+
+    @Test
+    public void MainPageTest3() throws InterruptedException {
+
+        main
+                .goToMain();
+        Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/cart");
+    }
+
+    @Test
+    public void MainPageTest4() throws InterruptedException {
+
+        main
+                .goToMain();
+
+       WebElement cartEmpty2 = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
+    }
+
 
     @Test
     public void MainPageTest() throws InterruptedException {

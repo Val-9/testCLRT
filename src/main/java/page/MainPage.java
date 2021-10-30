@@ -9,10 +9,10 @@ import org.testng.Assert;
 public class MainPage extends BasePage {
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(1)")
-    public WebElement header;
+    private WebElement header;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(2)")
-    public WebElement categoryMenu;
+    private WebElement categoryMenu;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(3)")
     public WebElement headerOrderInfo;
