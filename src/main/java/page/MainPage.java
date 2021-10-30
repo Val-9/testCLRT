@@ -8,6 +8,8 @@ import org.testng.Assert;
 
 public class MainPage extends BasePage {
 
+
+
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(1)")
     private WebElement header;
 
@@ -20,6 +22,7 @@ public class MainPage extends BasePage {
     @FindBy(css = "input[class='style_input__352mX'][placeholder='Поиск']")
     public WebElement inputSearch;
 
+    By inputSearch3 = By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']");
     WebElement inputSearch2 = driver.findElement(By.cssSelector("input[class='style_input__352mX'][placeholder='Поиск']"));
 
     @FindBy(css = "a[class='style_name__btju7 linkDefault']")
@@ -34,6 +37,8 @@ public class MainPage extends BasePage {
 
     @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']")
     public WebElement cartEmpty;
+
+
 
     @FindBy(css = "a[class='style_btnCart__1WGKM linkBtn style_inCart__2J_nM'][title='Корзина']")
     public WebElement cartAmount;
@@ -55,8 +60,7 @@ public class MainPage extends BasePage {
     String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
 
     public MainPage(WebDriver driver) {
-
-        super(driver);
+        super(driver) ;
     }
 
 
@@ -65,6 +69,7 @@ public class MainPage extends BasePage {
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
         System.out.println("Title is :" + " " + driver.getTitle());
+            System.out.println(driver.findElement(test).getText());
         return this;
     }
 
@@ -81,8 +86,8 @@ public class MainPage extends BasePage {
     }
 
     public MainPage searchProduct(String product) throws InterruptedException {
-        inputSearch2.click();
-        inputSearch.sendKeys(product);
+        driver.findElement(inputSearch3).click();
+        driver.findElement(inputSearch3).sendKeys(product);
         waitVisibility(By.cssSelector(productNameSearchCssValue));
         return this;
     }

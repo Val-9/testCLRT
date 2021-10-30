@@ -16,8 +16,9 @@ public class BasePage {
 
     public WebDriver driver;
     public WebDriverWait wait;
-
+    By test  = By.cssSelector(".style_nav__3ms0x");
     public BasePage(WebDriver driver) {
+
         this.driver = driver;
         wait = new WebDriverWait(driver, 15);
     }
