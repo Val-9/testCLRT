@@ -17,7 +17,8 @@ public class Test extends BaseTest {
     public void TestJenkins () throws InterruptedException {
 
         driver.get("https://color-it.ua");
-        Thread.sleep(5000);
+        WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
+        System.out.println(seeAll.getText());
         main.quantity.click();
         System.out.println(main.quantity.getAttribute("value"));
         WebElement h3 = driver.findElement(By.cssSelector(".style_heading__306pO"));
@@ -32,6 +33,7 @@ public class Test extends BaseTest {
         Assert.assertEquals(input.getAttribute("name"), "q");
         System.out.println(input.getAttribute("name"));
         System.out.println("Google TEST Success");
+
 
     }
 }
