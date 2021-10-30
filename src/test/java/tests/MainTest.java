@@ -33,8 +33,8 @@ public class MainTest extends BaseTest {
     public void MainPageTest() throws InterruptedException {
 
         main
-                .goToMain();
-                this.verifyMainPageNew();
+                .goToMain()
+                .verifyMainPage();
     }
 
     @Test (groups = {"smoke"})
