@@ -23,6 +23,9 @@ public class Test extends BaseTest {
         Assert.assertEquals(inputSearch.getAttribute("name"), "q");
         System.out.println(inputSearch.getAttribute("name"));
         System.out.println("TEST TEST NO LaUNCH BROWSER");
+        driver.get("https://color-it.ua");
+        WebElement cartEmpty2 = driver.findElement(By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']"));
+        Assert.assertEquals(cartEmpty2.getAttribute("href"), "https://color-it.ua/cart");
 
     }
 }
