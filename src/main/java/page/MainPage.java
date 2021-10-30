@@ -62,8 +62,7 @@ public class MainPage extends BasePage {
         @Step ("Переход на главную")
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
-        waitVisibility(By.cssSelector(".style_heading__306pO"));
-        System.out.println("на главную зашло");
+        System.out.println("Title is :" + " " + driver.getTitle());
         return this;
     }
 
