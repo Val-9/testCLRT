@@ -16,7 +16,10 @@ public class Test extends BaseTest {
     @org.testng.annotations.Test
     public void TestJenkins () throws InterruptedException {
 
-        main.goToMain();
+        driver.get("https://color-it.ua");
+        Thread.sleep(5000);
+        main.quantity.click();
+        System.out.println(main.quantity.getAttribute("value"));
         WebElement h3 = driver.findElement(By.cssSelector(".style_heading__306pO"));
         Assert.assertEquals(h3.getText(), "НОВИНКИ");
     }
