@@ -21,7 +21,7 @@ public class Test extends BaseTest  {
         System.out.println(input.getAttribute("name"));
         driver.get("https://color-it.ua");
         Thread.sleep (15000);
-        WebElement logo = driver.findElement(By.xpath("/html/body/div[1]/div[4]/header/div[2]/div/div/span"));
+        WebElement logo = driver.findElement(By.xpath("//*[@id='__next']/div[4]/header/div[2]/div/div/span/img"));
         main.goToMain().waitVisibility(By.cssSelector("span[class='style_logo__XsOQq']"));
         System.out.println(driver.getTitle());
         WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
