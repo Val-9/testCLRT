@@ -11,34 +11,6 @@ import org.testng.Assert;
 
 public class Test  {
 
-    public void driver () {
-
-
-
-    }
-
-    @org.testng.annotations.Test
-    public void TestJenkins () throws InterruptedException {
-
-        //   WebDriverManager.firefoxdriver().setup();
-    //  System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
-       System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-        FirefoxOptions options = new FirefoxOptions();
-   //     options.addArguments("--no-sandbox"); // Bypass OS security model
-        options.addArguments("--headless");
-     //   options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-     //   options.addArguments("--remote-debugging-port=9222");
-        //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        WebDriver driver = new FirefoxDriver(options);
-        driver.get("https://color-it.ua");
-        Thread.sleep(10000);
-        WebElement h3 = driver.findElement(By.cssSelector(".style_heading__306pO"));
-        Assert.assertEquals(h3.getText(), "НОВИНКИ");
-        WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
-        System.out.println(seeAll.getText());
-
-    }
-
     @org.testng.annotations.Test
     public void TestJenkins2 () throws InterruptedException {
         //   WebDriverManager.firefoxdriver().setup();
@@ -59,5 +31,28 @@ public class Test  {
 
 
     }
+
+    @org.testng.annotations.Test
+    public void TestJenkins () throws InterruptedException {
+
+        //   WebDriverManager.firefoxdriver().setup();
+    //  System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
+       System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--no-sandbox"); // Bypass OS security model
+        options.addArguments("--headless");
+     //   options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+     //   options.addArguments("--remote-debugging-port=9222");
+        //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        WebDriver driver = new FirefoxDriver(options);
+        driver.get("https://color-it.ua");
+        WebElement h3 = driver.findElement(By.cssSelector(".style_heading__306pO"));
+        Assert.assertEquals(h3.getText(), "НОВИНКИ");
+        WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
+        System.out.println(seeAll.getText());
+
+    }
+
+
 }
 
