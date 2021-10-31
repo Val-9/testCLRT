@@ -28,7 +28,12 @@ public class Test  {
         Assert.assertEquals(input.getAttribute("name"), "q");
         System.out.println(input.getAttribute("name"));
         System.out.println("Google TEST Success");
-
+        driver.get("https://color-it.ua");
+        System.out.println(driver.getTitle());
+        WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
+        System.out.println(banner.getAttribute("title"));
+        WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
+        System.out.println(seeAll.getText());
 
     }
 
