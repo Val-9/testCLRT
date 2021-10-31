@@ -29,6 +29,7 @@ public class Test  {
         WebElement input = driver.findElement(By.name("q"));
         Assert.assertEquals(input.getAttribute("name"), "q");
         System.out.println(input.getAttribute("name"));
+        input.click();
         input.sendKeys("lolo");
         input.getText();
         driver.get("https://color-it.ua");
