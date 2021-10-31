@@ -23,7 +23,7 @@ public class Test extends BaseTest  {
         driver.get("https://color-it.ua");
         Thread.sleep (15000);
         WebElement logo = driver.findElement(By.xpath("//*[@id='__next']/div[4]/header/div[2]/div/div/span/img"));
-        main.goToMain().waitVisibility(By.cssSelector("span[class='style_logo__XsOQq']"));
+
         System.out.println(driver.getTitle());
         WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
         System.out.println(banner.getAttribute("title"));
@@ -40,15 +40,13 @@ public class Test extends BaseTest  {
        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
-        options.addArguments("--window-size=1920,1080");
-        options.addArguments("--start-maximized");
         options.addArguments("--disable-extensions");
         options.addArguments("--disable-gpu");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--no-sandbox");
         options.addArguments("--ignore-certificate-errors");
         driver.manage().window().setSize(new Dimension(1024, 768));
-        WebDriver driver = new FirefoxDriver(options);
+        driver = new FirefoxDriver(options);
         driver.get("https://color-it.ua");
         System.out.println(driver.getTitle());
         WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
