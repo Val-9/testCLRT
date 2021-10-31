@@ -16,7 +16,7 @@ public class Test  {
 
     @org.testng.annotations.Test
     public void TestJenkins2 () throws InterruptedException {
-        String geckoDriverPath = "/usr/local/bin/geckodriver";
+       String geckoDriverPath = "C:\\\\QA\\\\AutoTesting\\\\Color-it\\\\geckodriver.exe";  ///usr/local/bin/geckodriver
         System.setProperty("webdriver.gecko.driver", geckoDriverPath);
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
@@ -31,8 +31,8 @@ public class Test  {
         System.out.println(input.getAttribute("name"));
         driver.get("https://color-it.ua");
         Thread.sleep (10000);
-        System.out.println(driver.getTitle());
         WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
+        System.out.println(driver.getTitle());
         System.out.println(banner.getAttribute("title"));
         WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
         System.out.println(seeAll.getText());
