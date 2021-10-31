@@ -22,8 +22,6 @@ public class MainPage extends BasePage {
     @FindBy(css = "input[class='style_input__352mX']")
     public WebElement inputSearch;
 
-    WebElement inputSearch2 = driver.findElement(By.cssSelector("input[class='style_input__352mX'][placeholder='Поиск']"));
-
     @FindBy(css = "a[class='style_name__btju7 linkDefault']")
     public WebElement productNameSearch;
     String productNameSearchCssValue = "a[class='style_name__btju7 linkDefault']";
@@ -84,7 +82,7 @@ public class MainPage extends BasePage {
     }
 
     public MainPage searchProduct(String product) throws InterruptedException {
-        inputSearch2.click();
+        inputSearch.click();
         inputSearch.sendKeys(product);
         waitVisibility(By.cssSelector(productNameSearchCssValue));
         return this;

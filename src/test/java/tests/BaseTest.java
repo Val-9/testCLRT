@@ -26,9 +26,9 @@ public class BaseTest {
     @BeforeMethod
 
     public void  start() {
-          WebDriverManager.firefoxdriver().setup();
+      //    WebDriverManager.firefoxdriver().setup();
   //      System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
-//        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
