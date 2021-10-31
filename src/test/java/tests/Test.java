@@ -29,10 +29,12 @@ public class Test  {
         WebElement input = driver.findElement(By.name("q"));
         Assert.assertEquals(input.getAttribute("name"), "q");
         System.out.println(input.getAttribute("name"));
+        input.sendKeys("lolo");
+        input.getText();
         driver.get("https://color-it.ua");
         Thread.sleep (10000);
-        WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
         System.out.println(driver.getTitle());
+        WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
         System.out.println(banner.getAttribute("title"));
         WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
         System.out.println(seeAll.getText());
@@ -43,7 +45,7 @@ public class Test  {
     public void TestJenkins () throws InterruptedException {
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
-   //     options.addArguments("--headless");
+        options.addArguments("--headless");
         WebDriver driver = new FirefoxDriver(options);
         driver.get("https://color-it.ua");
         System.out.println(driver.getTitle());
