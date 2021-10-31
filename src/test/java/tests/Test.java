@@ -13,7 +13,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class Test extends BaseTest  {
-    WebDriver driver;
 
     @org.testng.annotations.Test
     public void TestJenkins2 () throws InterruptedException {
