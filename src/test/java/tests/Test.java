@@ -16,7 +16,7 @@ public class Test  {
 
     @org.testng.annotations.Test
     public void TestJenkins2 () throws InterruptedException {
-       String geckoDriverPath = "C:\\\\QA\\\\AutoTesting\\\\Color-it\\\\geckodriver.exe";  ///usr/local/bin/geckodriver
+       String geckoDriverPath = "/usr/local/bin/geckodriver";  ///usr/local/bin/geckodriver
         System.setProperty("webdriver.gecko.driver", geckoDriverPath);
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
