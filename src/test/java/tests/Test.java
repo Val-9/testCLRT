@@ -38,14 +38,19 @@ public class Test extends BaseTest  {
    //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
        System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--no-sandbox"); // Bypass OS security model
+        options.addArguments("--window-size=1920,1080");
+        options.addArguments("--disable-extensions");
+        options.addArguments("--proxy-server='direct://'");
+        options.addArguments("--proxy-bypass-list=*");
+        options.addArguments("--start-maximized");
         options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--ignore-certificate-errors");
         //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriver driver = new FirefoxDriver(options);
         driver.get("https://color-it.ua");
-        Thread.sleep(15000);
         System.out.println(driver.getTitle());
         WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
         System.out.println(banner.getAttribute("title"));
