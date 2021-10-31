@@ -46,8 +46,8 @@ public class Test  {
         //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriver driver = new FirefoxDriver(options);
         driver.get("https://color-it.ua");
-        WebElement h3 = driver.findElement(By.cssSelector(".style_heading__306pO"));
-        Assert.assertEquals(h3.getText(), "НОВИНКИ");
+        WebElement banner = driver.findElement(By.cssSelector("img[class='style_banner__1wPVt']"));
+        System.out.println(banner.getAttribute("href"));
         WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
         System.out.println(seeAll.getText());
 
