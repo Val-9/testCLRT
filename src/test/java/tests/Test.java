@@ -34,7 +34,7 @@ public class Test extends BaseTest  {
 
         //   WebDriverManager.firefoxdriver().setup();
    //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
-   //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+       System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
@@ -43,6 +43,7 @@ public class Test extends BaseTest  {
         //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriver driver = new FirefoxDriver(options);
         driver.get("https://color-it.ua");
+        Thread.sleep(15000);
         System.out.println(driver.getTitle());
         WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
         System.out.println(banner.getAttribute("title"));
