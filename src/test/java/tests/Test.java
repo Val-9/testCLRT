@@ -20,6 +20,10 @@ public class Test  {
         System.setProperty("webdriver.gecko.driver", geckoDriverPath);
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
+        options.addArguments("--no-sandbox"); // Bypass OS security model
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--remote-debugging-port=9222");
         WebDriver driver = new FirefoxDriver(options);
         driver.get("https://www.google.com");
         WebElement input = driver.findElement(By.name("q"));
