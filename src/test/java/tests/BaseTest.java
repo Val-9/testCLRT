@@ -12,6 +12,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import page.*;
 
+import java.util.concurrent.TimeUnit;
 
 
 public class BaseTest {
@@ -27,15 +28,17 @@ public class BaseTest {
 
     public void  start() {
           WebDriverManager.firefoxdriver().setup();
-     //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
+      //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
      //   System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--no-sandbox"); // Bypass OS security model
-        options.addArguments("--headless");
+  //      options.addArguments("--no-sandbox"); // Bypass OS security model
+    //    options.addArguments("--headless");
     //    options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
      //   options.addArguments("--remote-debugging-port=9222");
     //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver = new FirefoxDriver(options);
+          WebDriver driver = new FirefoxDriver(options);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().window().maximize();
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
         cartPage = PageFactory.initElements(driver, CartPage.class);

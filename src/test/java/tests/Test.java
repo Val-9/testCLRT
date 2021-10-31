@@ -12,10 +12,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class Test extends BaseTest  {
+public class Test  {
 
     @org.testng.annotations.Test
     public void TestJenkins2 () throws InterruptedException {
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        WebDriver driver = new FirefoxDriver(options);
         driver.get("https://www.google.com");
         WebElement input = driver.findElement(By.name("q"));
         Assert.assertEquals(input.getAttribute("name"), "q");
@@ -32,7 +36,10 @@ public class Test extends BaseTest  {
 
     @org.testng.annotations.Test
     public void TestJenkins () throws InterruptedException {
-        driver.manage().window().setSize(new Dimension(1024, 768));
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        WebDriver driver = new FirefoxDriver(options);
         driver.get("https://color-it.ua");
         System.out.println(driver.getTitle());
         WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
