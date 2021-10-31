@@ -31,6 +31,7 @@ public class Test  {
         //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriver driver = new FirefoxDriver(options);
         driver.get("https://color-it.ua");
+        Thread.sleep(10000);
         WebElement h3 = driver.findElement(By.cssSelector(".style_heading__306pO"));
         Assert.assertEquals(h3.getText(), "НОВИНКИ");
         WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
