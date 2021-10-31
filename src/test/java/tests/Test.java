@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class Test  {
@@ -29,6 +31,7 @@ public class Test  {
         System.out.println(input.getAttribute("name"));
         System.out.println("Google TEST Success");
         driver.get("https://color-it.ua");
+        new WebDriverWait(driver, 10).until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("span[class='style_logo__XsOQq']")));
         System.out.println(driver.getTitle());
         WebElement banner = driver.findElement(By.cssSelector("span[class='style_logo__XsOQq']"));
         System.out.println(banner.getAttribute("title"));
