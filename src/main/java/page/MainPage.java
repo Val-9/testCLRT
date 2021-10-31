@@ -19,10 +19,9 @@ public class MainPage extends BasePage {
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(3)")
     public WebElement headerOrderInfo;
 
-    @FindBy(css = "input[class='style_input__352mX'][placeholder='Поиск']")
+    @FindBy(css = "input[class='style_input__352mX']")
     public WebElement inputSearch;
 
-    By inputSearch3 = By.cssSelector("a[class='style_btnCart__1WGKM linkBtn false'][title='Корзина']");
     WebElement inputSearch2 = driver.findElement(By.cssSelector("input[class='style_input__352mX'][placeholder='Поиск']"));
 
     @FindBy(css = "a[class='style_name__btju7 linkDefault']")
@@ -63,14 +62,12 @@ public class MainPage extends BasePage {
         super(driver) ;
     }
 
-    By loginButton = By.xpath("style_btnLink__39usR linkBtn");
 
     // Test case # 1
         @Step ("Переход на главную")
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
         System.out.println("Title is :" + " " + driver.getTitle());
-        System.out.println(driver.findElement(loginButton).getText());
         return this;
     }
 
@@ -87,8 +84,8 @@ public class MainPage extends BasePage {
     }
 
     public MainPage searchProduct(String product) throws InterruptedException {
-        driver.findElement(inputSearch3).click();
-        driver.findElement(inputSearch3).sendKeys(product);
+        inputSearch2.click();
+        inputSearch.sendKeys(product);
         waitVisibility(By.cssSelector(productNameSearchCssValue));
         return this;
     }
