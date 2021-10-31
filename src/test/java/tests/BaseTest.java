@@ -11,11 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import page.*;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.concurrent.TimeUnit;
 
 
 public class BaseTest {
