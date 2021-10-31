@@ -16,7 +16,8 @@ public class Test  {
 
     @org.testng.annotations.Test
     public void TestJenkins2 () throws InterruptedException {
-        WebDriverManager.firefoxdriver().setup();
+        String geckoDriverPath = "/usr/local/bin/geckodriver";
+        System.setProperty("webdriver.gecko.driver", geckoDriverPath);
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
         WebDriver driver = new FirefoxDriver(options);
@@ -38,7 +39,7 @@ public class Test  {
     public void TestJenkins () throws InterruptedException {
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless");
+   //     options.addArguments("--headless");
         WebDriver driver = new FirefoxDriver(options);
         driver.get("https://color-it.ua");
         System.out.println(driver.getTitle());
