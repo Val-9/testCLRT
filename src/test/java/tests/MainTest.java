@@ -1,6 +1,7 @@
 package tests;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
@@ -10,17 +11,7 @@ import page.MainPage;
 
 
 public class MainTest extends BaseTest {
-
-
-
-
-    @Test
-    public void MainPageTest3() throws InterruptedException {
-        main
-                .goToMain();
-        Assert.assertEquals(main.cartEmpty.getAttribute("title"), "Корзина");
-    }
-
+    public WebDriver driver;
 
     @Test
     public void MainPageTest() throws InterruptedException {
