@@ -37,7 +37,6 @@ public class BaseTest {
         options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--remote-debugging-port=9222");
-    //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
           WebDriver driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
