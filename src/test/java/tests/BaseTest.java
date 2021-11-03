@@ -27,14 +27,14 @@ public class BaseTest {
     @BeforeMethod
 
     public void  start() {
-          WebDriverManager.firefoxdriver().setup();
+       //   WebDriverManager.firefoxdriver().setup();
       //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
-     //   System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+        System.setProperty("webdriver.chrome.driver", "sudo /usr/local/bin/chromedriver");
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
-    //    options.addArguments("--headless");
-    //    options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-     //   options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--headless");
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--remote-debugging-port=9222");
     //    driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
           WebDriver driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
