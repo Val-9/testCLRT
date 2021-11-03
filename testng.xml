@@ -6,7 +6,6 @@
 
 
         <classes>
-            <class name="tests.Test"></class>
             <class name="tests.MainTest"></class>
         </classes>
     </test>
