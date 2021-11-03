@@ -16,8 +16,8 @@ public class Test  {
 
     @org.testng.annotations.Test
     public void TestJenkins2 () throws InterruptedException {
-       String geckoDriverPath = "sudo /usr/local/bin/geckodriver";
-        System.setProperty("webdriver.gecko.driver", geckoDriverPath);
+       String chromeDriverPath = "sudo /usr/local/bin/chromedriver";
+        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security model
