@@ -16,14 +16,14 @@ public class Test  {
 
     @org.testng.annotations.Test
     public void TestJenkins2 () throws InterruptedException {
-       String geckoDriverPath = "/usr/local/bin/geckodriver";  ///usr/local/bin/geckodriver
+       String geckoDriverPath = "sudo /usr/local/bin/geckodriver";
         System.setProperty("webdriver.gecko.driver", geckoDriverPath);
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security model
-        options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--remote-debugging-port=9222");
+
+//        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+  //      options.addArguments("--remote-debugging-port=9222");
         WebDriver driver = new FirefoxDriver(options);
         driver.get("https://www.google.com");
         WebElement input = driver.findElement(By.name("q"));
@@ -31,7 +31,7 @@ public class Test  {
         System.out.println(input.getAttribute("name"));
         input.click();
         input.sendKeys("lolo");
-        input.getText();
+        System.out.println(input.getAttribute("value"));
         driver.get("https://color-it.ua");
         Thread.sleep (10000);
         System.out.println(driver.getTitle());
@@ -40,10 +40,11 @@ public class Test  {
         WebElement seeAll = driver.findElement(By.cssSelector(".style_link__5n7xe"));
         System.out.println(seeAll.getText());
         System.out.println("Google TEST Success");
+        driver.quit();
     }
 
-    @org.testng.annotations.Test
-    public void TestJenkins () throws InterruptedException {
+       @org.testng.annotations.Test
+       public void TestJenkins () throws InterruptedException {
         WebDriverManager.firefoxdriver().setup();
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");

@@ -16,7 +16,6 @@ public class MainTest extends BaseTest {
 
     @Test
     public void MainPageTest3() throws InterruptedException {
-
         main
                 .goToMain();
         Assert.assertEquals(main.cartEmpty.getAttribute("title"), "Корзина");
