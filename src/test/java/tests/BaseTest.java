@@ -31,7 +31,7 @@ public class BaseTest {
     public void  start() {
        //   WebDriverManager.firefoxdriver().setup();
       //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromium");
+        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
