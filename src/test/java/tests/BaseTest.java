@@ -42,7 +42,6 @@ public class BaseTest {
         options.addArguments("--remote-debugging-port=9222");
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.manage().window().maximize();
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
         cartPage = PageFactory.initElements(driver, CartPage.class);
