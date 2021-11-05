@@ -31,14 +31,15 @@ public class BaseTest {
     public void  start() {
        //   WebDriverManager.chromedriver().setup();
       //    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-  //      options.addArguments("--no-sandbox"); // Bypass OS security mode
-  //      options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-  //      options.addArguments("--remote-debugging-port=9222");
-    //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
+      //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
+        //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
+        //    System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
         System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--remote-debugging-port=9222");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
