@@ -64,12 +64,15 @@ public class MainPage extends BasePage {
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
         System.out.println("Title is :" + " " + driver.getTitle());
+        System.out.println("Title is :" + " " + driver.getWindowHandles().size());
+
         return this;
     }
 
     public MainPage verifyMainPage() {
 
         cartEmpty.isDisplayed();
+        cartEmpty.getSize();
         Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/cart");
      /*   Assert.assertTrue(header.getText().contains(headerText));
 
