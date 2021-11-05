@@ -40,6 +40,7 @@ public class BaseTest {
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         driver = new FirefoxDriver(options);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
