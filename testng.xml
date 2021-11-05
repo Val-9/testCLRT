@@ -6,7 +6,11 @@
 
 
         <classes>
-            <class name="tests.MainTest"></class>
+            <class name="tests.MainTest">
+            <methods>
+                <include name="MainPageTest"/>
+            </methods>
+            </class>
         </classes>
     </test>
 </suite>

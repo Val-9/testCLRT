@@ -59,26 +59,24 @@ public class MainPage extends BasePage {
     }
 
 
-    // Test case # 1
-        @Step ("Переход на главную")
+
+
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
         System.out.println("Title is :" + " " + driver.getTitle());
         return this;
     }
 
-    // Test case # 1
-    @Step("Проверка главной страницы.")
     public MainPage verifyMainPage() {
 
         cartEmpty.isDisplayed();
         Assert.assertEquals(cartEmpty.getAttribute("href"), "https://color-it.ua/cart");
-        System.out.println(header.getText());
-     //   Assert.assertTrue(header.getText().contains(headerText));
+     /*   Assert.assertTrue(header.getText().contains(headerText));
 
         Assert.assertEquals(categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
         System.out.println(headerOrderInfo.getText());
         Assert.assertEquals(headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
+        return this; */
         return this;
     }
 
