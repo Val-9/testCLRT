@@ -40,7 +40,7 @@ public class BaseTest {
         options.addArguments("--no-sandbox"); // Bypass OS security mode
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         options.addArguments("--remote-debugging-port=9222");
-        driver = new FirefoxDriver();
+        driver = new FirefoxDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
