@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
 
 public class BaseTest {
 
-    public WebDriver driver;
+    private WebDriver driver;
     public MainPage main;
     public ProductCardPage productCardPage;
     public CartPage cartPage;
