@@ -29,16 +29,17 @@ public class BaseTest {
     @BeforeMethod
 
     public void  start() {
-       //   WebDriverManager.firefoxdriver().setup();
+       //   WebDriverManager.chromedriver().setup();
       //    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+  //      options.addArguments("--no-sandbox"); // Bypass OS security mode
+  //      options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+  //      options.addArguments("--remote-debugging-port=9222");
+    //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--no-sandbox"); // Bypass OS security model
         options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--remote-debugging-port=9222");
-        System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
-
-        WebDriver driver = new ChromeDriver(options);
+        options.addArguments("--no-sandbox"); // Bypass OS security mode
+        driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         main = PageFactory.initElements(driver, MainPage.class);
@@ -47,29 +48,9 @@ public class BaseTest {
         checkOutPage = PageFactory.initElements(driver, CheckOutPage.class);
 
      }
-
-
-      /*  System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
-        FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--no-sandbox"); // Bypass OS security model
-        options.addArguments("--headless");
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        options.addArguments("--remote-debugging-port=9222");
-        WebDriver driver = new RemoteWebDriver(new URL("http://http://jenkins01.color-it.ua:4444/wd/hub"), options);*/
-
-
-
-
-        //     DesiredCapabilities capabilities = new DesiredCapabilities();
-        // If this cap isn't specified, it will just get any available one
-        //       capabilities.setCapability("network", true); // To enable network logs
-        //     capabilities.setCapability("visual", true); // To enable step by step screenshot
-        //   capabilities.setCapability("video", true); // To enable video recording
-        //   capabilities.setCapability("console", true); // To capture console logs
-
     @AfterMethod
     public void close() {
 
-        driver.quit();
+       driver.quit();
     }
 }

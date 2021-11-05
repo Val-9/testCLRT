@@ -11,7 +11,6 @@ import page.MainPage;
 
 
 public class MainTest extends BaseTest {
-    public WebDriver driver;
 
     @Test
     public void MainPageTest() throws InterruptedException {
