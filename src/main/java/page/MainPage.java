@@ -69,7 +69,8 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage verifyMainPage() {
+    public MainPage verifyMainPage() throws InterruptedException {
+        Thread.sleep(10000);
       waitVisibility(By.cssSelector("span[class='style_logo__XsOQq'][title='Color-it']"));
       logo.click();
 
