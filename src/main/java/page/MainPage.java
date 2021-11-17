@@ -88,12 +88,9 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifyMainPage() {
-      waitVisibility(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
-      WebElement logo =  driver.findElement(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
+      waitVisibility(By.xpath("//button[normalize-space(text())='Товары для школы']"));
+      WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(text())='Товары для школы']"));
       logo.click();
-      waitVisibility(By.cssSelector("a[class='exchange-button gdx-link  theme-2']"));
-      WebElement exchangeButton =  driver.findElement(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
-      exchangeButton.click();
         System.out.println(captureScreen());
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
