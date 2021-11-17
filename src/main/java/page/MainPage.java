@@ -88,9 +88,10 @@ public class MainPage extends BasePage {
         return this;
     }
 
-    public MainPage verifyMainPage() {
-      waitVisibility(By.xpath("//button[normalize-space(text())='Вход']"));
-      WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(text())='Вход']"));
+    public MainPage verifyMainPage() throws InterruptedException {
+        Thread.sleep(10000);
+      waitVisibility(By.xpath("//button[normalize-space(.)='Вход']"));
+      WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(.)='Вход']"));
         System.out.println(logo.getText());
       logo.click();
         System.out.println(captureScreen());
