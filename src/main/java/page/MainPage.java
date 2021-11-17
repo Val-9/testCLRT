@@ -72,6 +72,8 @@ public class MainPage extends BasePage {
     public MainPage verifyMainPage() {
       WebElement logo =  driver.findElement(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
       logo.click();
+      WebElement exchangeButton =  driver.findElement(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
+      exchangeButton.click();
 
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
