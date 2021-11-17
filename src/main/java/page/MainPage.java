@@ -71,12 +71,10 @@ public class MainPage extends BasePage {
 
     public MainPage verifyMainPage() throws InterruptedException {
         Thread.sleep(60000);
-      waitVisibility(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
-      WebElement logo =  driver.findElement(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
+      waitVisibility(By.cssSelector("button[class='style_navItemBtn__2QZzM linkBtn style_navItem__Z4LNl linkSecondary style_navItem__Z4LNl linkSecondary undefined false']"));
+      WebElement logo =  driver.findElement(By.cssSelector("button[class='style_navItemBtn__2QZzM linkBtn style_navItem__Z4LNl linkSecondary style_navItem__Z4LNl linkSecondary undefined false']"));
       logo.click();
-      waitVisibility(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
-      WebElement exchangeButton =  driver.findElement(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
-      exchangeButton.click();
+
 
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
