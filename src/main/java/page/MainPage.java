@@ -70,8 +70,10 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifyMainPage() {
+      waitVisibility(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
       WebElement logo =  driver.findElement(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
       logo.click();
+      waitVisibility(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
       WebElement exchangeButton =  driver.findElement(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
       exchangeButton.click();
 
