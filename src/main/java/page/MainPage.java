@@ -70,12 +70,8 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifyMainPage() {
-        WebElement cartIcon = driver.findElement(By.xpath("/html/body/div[1]/div[4]/header/div[1]/div/div/div[2]/a"));
-        WebElement cartIcon2 = driver.findElement(By.xpath("//*[@id=\"__next\"]/div[4]/header/div[1]/div/div/div[2]/a"));
-        cartIcon.getSize();
-        cartIcon2.getSize();
-        cartEmpty.isDisplayed();
-        cartEmpty.getSize();
+        inputSearch.click();
+
      /*   Assert.assertTrue(header.getText().contains(headerText));
 
         Assert.assertEquals(categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
