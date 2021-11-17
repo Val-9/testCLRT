@@ -84,12 +84,13 @@ public class MainPage extends BasePage {
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
 
+
         return this;
     }
 
     public MainPage verifyMainPage() {
-      waitVisibility(By.xpath("//button[normalize-space(text())='Товары для школы']"));
-      WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(text())='Товары для школы']"));
+      waitVisibility(By.xpath("//button[normalize-space(text())='Вход']"));
+      WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(text())='Вход']"));
         System.out.println(logo.getText());
       logo.click();
         System.out.println(captureScreen());
