@@ -64,7 +64,7 @@ public class MainPage extends BasePage {
        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua");
         System.out.println("Title is :" + " " + driver.getTitle());
-        System.out.println("Title is :" + " " + driver.getWindowHandles().size());
+        System.out.println("Size is :" + " " + driver.manage().window().getSize());
 
         return this;
     }
@@ -140,8 +140,6 @@ public class MainPage extends BasePage {
 //        String textNameOnMain2 = productNameOnMain.getText();
         buttonInCart.click();
  //       String textNameInCart = productNameInCart.getText();
-
-
         return this;
     }
 
