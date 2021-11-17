@@ -1,10 +1,15 @@
 package page;
 
 import io.qameta.allure.Step;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
+
+import java.io.File;
+import java.io.IOException;
 
 public class MainPage extends BasePage {
 
@@ -58,24 +63,38 @@ public class MainPage extends BasePage {
         super(driver) ;
     }
 
+    public String captureScreen() {
+        String path;
+        WebDriver driver = new FirefoxDriver();
+        try {
+            WebDriver webDriver = new Augmenter().augment(driver);
+            File source = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
+            path = "./target/screenshots/" + source.getName();
+            FileUtils.copyFile(source, new File(path));
+        } catch (IOException e) {
+            path = "Failed to capture screenshot: " + e.getMessage();
+        }
+        return path;
 
 
+    }
 
-       public MainPage goToMain() throws InterruptedException {
-        driver.get("https://color-it.ua");
+        public MainPage goToMain() throws InterruptedException {
+        driver.get("https://godex.io");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
 
         return this;
     }
 
-    public MainPage verifyMainPage() throws InterruptedException {
-        Thread.sleep(60000);
-      waitVisibility(By.cssSelector("button[class='style_navItemBtn__2QZzM linkBtn style_navItem__Z4LNl linkSecondary style_navItem__Z4LNl linkSecondary undefined false']"));
-      WebElement logo =  driver.findElement(By.cssSelector("button[class='style_navItemBtn__2QZzM linkBtn style_navItem__Z4LNl linkSecondary style_navItem__Z4LNl linkSecondary undefined false']"));
+    public MainPage verifyMainPage() {
+      waitVisibility(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
+      WebElement logo =  driver.findElement(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
       logo.click();
-
-
+      waitVisibility(By.cssSelector("a[class='exchange-button gdx-link  theme-2']"));
+      WebElement exchangeButton =  driver.findElement(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
+      exchangeButton.click();
+        System.out.println(captureScreen());
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
 
