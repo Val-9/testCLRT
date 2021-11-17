@@ -62,7 +62,7 @@ public class MainPage extends BasePage {
 
 
        public MainPage goToMain() throws InterruptedException {
-        driver.get("https://godex.io");
+        driver.get("https://color-it.ua");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
 
@@ -70,12 +70,13 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifyMainPage() {
-      waitVisibility(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
-      WebElement logo =  driver.findElement(By.cssSelector("img[class='gdx-image lazy-load lazy-loaded']"));
+      waitVisibility(By.cssSelector("span[class='style_logo__XsOQq'][title='Color-it']"));
       logo.click();
-      waitVisibility(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
-      WebElement exchangeButton =  driver.findElement(By.cssSelector("a[class='exchange-button gdx-link  theme-2  ']"));
-      exchangeButton.click();
+
+
+
+      waitVisibility(By.cssSelector(""));
+
 
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
