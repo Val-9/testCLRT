@@ -35,11 +35,11 @@ public class BaseTest {
         //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
       //  options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
       //  options.addArguments("--remote-debugging-port=9222");
-    //    System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
+        System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
      //   options.addArguments("--headless");
-     //   options.addArguments("--no-sandbox"); // Bypass OS security mode
-     //   options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+        options.addArguments("--no-sandbox"); // Bypass OS security mode
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         driver = new FirefoxDriver(options);
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
