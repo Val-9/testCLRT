@@ -90,6 +90,7 @@ public class MainPage extends BasePage {
     public MainPage verifyMainPage() {
       waitVisibility(By.xpath("//button[normalize-space(text())='Товары для школы']"));
       WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(text())='Товары для школы']"));
+        System.out.println(logo.getText());
       logo.click();
         System.out.println(captureScreen());
 
