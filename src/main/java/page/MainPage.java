@@ -71,8 +71,8 @@ public class MainPage extends BasePage {
 
     public MainPage verifyMainPage() throws InterruptedException {
         Thread.sleep(10000);
-      waitVisibility(By.cssSelector("span[class='style_logo__XsOQq'][title='Color-it']"));
-      logo.click();
+      waitVisibility(By.cssSelector("button[class='style_navItemBtn__2QZzM linkBtn style_navItem__Z4LNl linkSecondary style_navItem__Z4LNl linkSecondary undefined false']"));
+      WebElement butt = driver.findElement(By.cssSelector("button[class='style_navItemBtn__2QZzM linkBtn style_navItem__Z4LNl linkSecondary style_navItem__Z4LNl linkSecondary undefined false']"));
 
 
 
