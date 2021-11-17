@@ -80,7 +80,7 @@ public class MainPage extends BasePage {
     }
 
         public MainPage goToMain() throws InterruptedException {
-        driver.get("https://color-it.ua");
+        driver.get("https://godex.io");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
 
@@ -90,8 +90,8 @@ public class MainPage extends BasePage {
 
     public MainPage verifyMainPage() throws InterruptedException {
         Thread.sleep(10000);
-      waitVisibility(By.xpath("//button[normalize-space(.)='Вход']"));
-      WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(.)='Вход']"));
+      waitVisibility(By.xpath("//li[normalize-space(.)='Fixed Rate']"));
+      WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(.)='Fixed Rate']"));
         System.out.println(logo.getText());
       logo.click();
         System.out.println(captureScreen());
