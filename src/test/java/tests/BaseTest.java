@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -41,7 +42,7 @@ public class BaseTest {
         options.addArguments("--no-sandbox"); // Bypass OS security mode
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
         driver = new FirefoxDriver(options);
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1600, 900));
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
         cartPage = PageFactory.initElements(driver, CartPage.class);
