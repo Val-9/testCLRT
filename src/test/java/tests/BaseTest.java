@@ -34,17 +34,17 @@ public class BaseTest {
 
       //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
         //  System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
-      //    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+          System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
       //    options.addArguments("--remote-debugging-port=9222");
       //
-        System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
-        FirefoxOptions options = new FirefoxOptions();
-     // ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
+     //   System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
+    //    FirefoxOptions options = new FirefoxOptions();
+        ChromeOptions options = new ChromeOptions();
+     //   options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problem
         options.addArguments("--remote-debugging-port=9222");
-        driver = new FirefoxDriver(options);
+        driver = new ChromeDriver(options);
         Dimension dimension = new Dimension(1600, 900);
         driver.manage().window().setSize(dimension);
         main = PageFactory.initElements(driver, MainPage.class);
