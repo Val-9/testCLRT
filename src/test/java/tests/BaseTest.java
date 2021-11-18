@@ -40,7 +40,7 @@ public class BaseTest {
         System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
         FirefoxOptions options = new FirefoxOptions();
      // ChromeOptions options = new ChromeOptions();
-    //  options.addArguments("--headless");
+        options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problem
         options.addArguments("--remote-debugging-port=9222");
