@@ -60,7 +60,7 @@ public class MainPage extends BasePage {
     public WebElement exchButton;
     @FindBy(css = ".c-input")
     public WebElement adress;
-    @FindBy(css = ".c-btn")
+    @FindBy(css = "button[class='c-btn c-btn--regular c-btn--mw-234 c-btn--fw-tm step-btn--shadow c-btn--h-72']")
     public WebElement exchButton2;
 
 
