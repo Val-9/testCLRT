@@ -3,6 +3,7 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -11,7 +12,7 @@ import page.MainPage;
 
 
 public class MainTest extends BaseTest {
- WebDriver driver;
+    WebDriver driver = new FirefoxDriver();
 
 
     @Test
@@ -21,7 +22,7 @@ public class MainTest extends BaseTest {
                 .goToMain();
                 WebElement test = driver.findElement(By.cssSelector("div.style_wrapper__2Y0Uz:nth-child(1) > div:nth-child(1)"));
                 test.isDisplayed();
-                main .verifyMainPage();
+                main.verifyMainPage();
     }
 
     @Test (groups = {"smoke"})
