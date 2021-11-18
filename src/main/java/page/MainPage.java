@@ -34,7 +34,7 @@ public class MainPage extends BasePage {
     @FindBy(css = "buttonInCart")
     public WebElement productNameOnMain;
 
-    @FindBy(xpath = "//header//*[@title='Color-it'][contains(@class,'logoLink')]")
+    @FindBy(css = "img[alt='Color-it']")
     public WebElement logo;
 
     @FindBy(css = "span[class='style_btnCartIcon__1Kkdo']")
@@ -87,7 +87,7 @@ public class MainPage extends BasePage {
 
       public MainPage verifyMainPage() {
 
-        waitVisibility(By.cssSelector("//header//*[@title='Color-it'][contains(@class,'logoLink')]"));
+        waitVisibility(By.cssSelector("img[alt='Color-it']"));
 
 
          //Godex create transactions
