@@ -15,6 +15,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import page.*;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 
@@ -29,7 +31,7 @@ public class BaseTest {
 
     @BeforeMethod
 
-    public void  start() {
+    public void  start() throws MalformedURLException {
        //   WebDriverManager.chromedriver().setup();
 
       //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
@@ -44,7 +46,8 @@ public class BaseTest {
     //  options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        driver = new FirefoxDriver(options);
+        RemoteWebDriver driver= new RemoteWebDriver(new URL("/usr/local/bin/geckodriver"), options);
+        //    driver = new FirefoxDriver(options);
         driver.manage().window().setSize(new Dimension(1600, 900));
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
