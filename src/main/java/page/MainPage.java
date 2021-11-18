@@ -71,7 +71,7 @@ public class MainPage extends BasePage {
     }
 
         public MainPage goToMain() {
-        driver.get("https://color-it.ua/");
+        driver.get("https://devvv.godex.io/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
            try{
@@ -87,14 +87,12 @@ public class MainPage extends BasePage {
 
       public MainPage verifyMainPage() {
 
-        waitVisibility(By.cssSelector("img[alt='Color-it']"));
-
 
          //Godex create transactions
-/*         exchButton.click();
+           exchButton.click();
            adress.click();
            adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
-           exchButton2.click(); */
+           exchButton2.click();
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
 
