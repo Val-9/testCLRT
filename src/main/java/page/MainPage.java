@@ -71,7 +71,7 @@ public class MainPage extends BasePage {
     }
 
         public MainPage goToMain() throws InterruptedException {
-        driver.get("https://color-it.ua");
+        driver.get("https://godex.io/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
         return this;
