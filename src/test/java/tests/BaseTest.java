@@ -34,18 +34,17 @@ public class BaseTest {
 
       //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
         //  System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
+      //    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+      //    options.addArguments("--remote-debugging-port=9222");
+      //
+        System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
 
-      //  options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-      //  options.addArguments("--remote-debugging-port=9222");
-          System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-     //   System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
-
-     // FirefoxOptions options = new FirefoxOptions();
-        ChromeOptions options = new ChromeOptions();
+        FirefoxOptions options = new FirefoxOptions();
+     //   ChromeOptions options = new ChromeOptions();
     //  options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        driver = new ChromeDriver(options);
+        driver = new FirefoxDriver(options);
         driver.manage().window().setSize(new Dimension(1600, 900));
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
