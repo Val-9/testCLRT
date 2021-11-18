@@ -7,7 +7,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
-
+import org.openqa.selenium.TakesScreenshot;
 import java.io.File;
 import java.io.IOException;
 
@@ -70,10 +70,13 @@ public class MainPage extends BasePage {
         super(driver) ;
     }
 
-        public MainPage goToMain() throws InterruptedException {
+        public MainPage goToMain() throws InterruptedException, IOException {
         driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
+            TakesScreenshot ts = (TakesScreenshot)driver;
+            File source = ts.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(source, new File("./target/screenshots/Screen.png"));
         return this;
     }
 
