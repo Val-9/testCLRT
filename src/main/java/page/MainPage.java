@@ -88,6 +88,7 @@ public class MainPage extends BasePage {
     }
 
       public MainPage verifyMainPage() throws InterruptedException {
+        Thread.sleep(30000);
       waitVisibility(By.cssSelector("img[class = 'style_bannerImg__ZWDOt swiper-lazy swiper-lazy-loaded']"));
       WebElement head = driver.findElement(By.cssSelector("div.style_container__11tHh:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > a:nth-child(1) > img:nth-child(1)"));
       head.isDisplayed();
