@@ -86,15 +86,15 @@ public class MainPage extends BasePage {
     }
 
       public MainPage verifyMainPage() {
-      logo.isDisplayed();
+
+        waitVisibility(By.cssSelector("//header//*[@title='Color-it'][contains(@class,'logoLink')]"));
 
 
-//Godex create transactions
-
-/*       exchButton.click();
-          adress.click();
-          adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
-          exchButton2.click(); */
+         //Godex create transactions
+/*         exchButton.click();
+           adress.click();
+           adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
+           exchButton2.click(); */
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
 
