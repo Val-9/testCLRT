@@ -89,10 +89,10 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifyMainPage() throws InterruptedException {
-      waitVisibility(By.cssSelector(".style_btn__1Thp0"));
+      waitVisibility(By.cssSelector("div.style_wrapper__2Y0Uz:nth-child(1) > div:nth-child(1)"));
       WebElement head = driver.findElement(By.cssSelector("div.style_wrapper__2Y0Uz:nth-child(1)"));
       head.isDisplayed();
-      WebElement sear = driver.findElement(By.cssSelector(".style_btn__1Thp0"));
+      WebElement sear = driver.findElement(By.cssSelector(".style_root__1MiEl"));
       sear.click();
 
 
