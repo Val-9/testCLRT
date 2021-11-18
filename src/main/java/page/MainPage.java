@@ -83,14 +83,13 @@ public class MainPage extends BasePage {
         driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
-        this.captureScreen();
 
         return this;
     }
 
-    public MainPage verifyMainPage() throws InterruptedException {
-      waitVisibility(By.cssSelector("div.style_wrapper__2Y0Uz:nth-child(1) > div:nth-child(1)"));
-      WebElement head = driver.findElement(By.cssSelector("div.style_wrapper__2Y0Uz:nth-child(1)"));
+      public MainPage verifyMainPage() throws InterruptedException {
+      waitVisibility(By.cssSelector("div.style_container__11tHh:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > a:nth-child(1) > img:nth-child(1)"));
+      WebElement head = driver.findElement(By.cssSelector("div.style_container__11tHh:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > a:nth-child(1) > img:nth-child(1)"));
       head.isDisplayed();
       WebElement sear = driver.findElement(By.cssSelector(".style_root__1MiEl"));
       sear.click();
