@@ -45,7 +45,6 @@ public class BaseTest {
         options.addArguments("--no-sandbox"); // Bypass OS security mode
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problem
         options.addArguments("--remote-debugging-port=9222");
-        options.setPageLoadStrategy(PageLoadStrategy.NONE);
         driver = new FirefoxDriver(options);
         driver.manage().window().maximize();      //setSize(new Dimension(1600, 900));
         main = PageFactory.initElements(driver, MainPage.class);

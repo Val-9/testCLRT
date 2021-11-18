@@ -64,7 +64,7 @@ public class MainPage extends BasePage {
     }
 
         public MainPage goToMain() throws InterruptedException {
-        driver.get("https://color-it.ua/");
+        driver.get("https://godex.io/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
 
@@ -72,12 +72,17 @@ public class MainPage extends BasePage {
     }
 
       public MainPage verifyMainPage() throws InterruptedException {
-        Thread.sleep(30000);
-      waitVisibility(By.cssSelector("div[class ='swiper-slide']"));
-      WebElement head = driver.findElement(By.cssSelector("div.style_container__11tHh:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > a:nth-child(1) > img:nth-child(1)"));
-      head.isDisplayed();
-      WebElement sear = driver.findElement(By.cssSelector(".style_root__1MiEl"));
-      sear.click();
+        Thread.sleep(10000);
+      WebElement exchButton = driver.findElement(By.cssSelector(".exchange-button"));
+          exchButton.click();
+      WebElement adress = driver.findElement(By.cssSelector(".c-input"));
+      adress.click();
+      adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
+          Thread.sleep(3000);
+          WebElement exchButton2 = driver.findElement(By.cssSelector(".c-btn"));
+          Thread.sleep(5000);
+
+
 
 
 
