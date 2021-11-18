@@ -33,10 +33,11 @@ public class BaseTest {
        //   WebDriverManager.chromedriver().setup();
       //    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
       //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
-        //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
+        //    System.setProperty("webdriver.gecko.driver", "/usr/local/bin/geckodriver");
       //  options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
       //  options.addArguments("--remote-debugging-port=9222");
-        System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
+      //  System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
         FirefoxOptions options = new FirefoxOptions();
      //   options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
