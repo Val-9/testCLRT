@@ -34,7 +34,7 @@ public class MainPage extends BasePage {
     @FindBy(css = "buttonInCart")
     public WebElement productNameOnMain;
 
-    @FindBy(css = "span[class='style_logoLink__1S1hB']")
+    @FindBy(xpath = "//header//*[@title='Color-it'][contains(@class,'logoLink')]")
     public WebElement logo;
 
     @FindBy(css = "span[class='style_btnCartIcon__1Kkdo']")
