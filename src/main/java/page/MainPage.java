@@ -94,6 +94,8 @@ public class MainPage extends BasePage {
            adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
            exchButton2.click();
            Thread.sleep(10000);
+           WebElement error = driver.findElement(By.cssSelector("div[class='c-text c-text--fs-24 c-text--fw-700']"));
+          System.out.println(error.getText());
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
 
