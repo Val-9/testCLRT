@@ -71,22 +71,23 @@ public class MainPage extends BasePage {
     }
 
         public MainPage goToMain() throws InterruptedException {
-        driver.get("https://godex.io/");
+        driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
         return this;
     }
 
       public MainPage verifyMainPage() {
-          exchButton.click();
+      logo.isDisplayed();
+          categoryMenu.isDisplayed();
+
+
+//Godex create transactions
+
+/*    exchButton.click();
           adress.click();
           adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
-          exchButton2.click();
-
-
-
-
-
+          exchButton2.click(); */
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
 

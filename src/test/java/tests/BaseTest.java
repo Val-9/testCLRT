@@ -38,7 +38,6 @@ public class BaseTest {
       //    options.addArguments("--remote-debugging-port=9222");
       //
         System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
-
         FirefoxOptions options = new FirefoxOptions();
      // ChromeOptions options = new ChromeOptions();
     //  options.addArguments("--headless");
