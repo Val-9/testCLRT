@@ -80,7 +80,7 @@ public class MainPage extends BasePage {
     }
 
         public MainPage goToMain() throws InterruptedException {
-        driver.get("https://godex.io");
+        driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
         this.captureScreen();
@@ -89,12 +89,11 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifyMainPage() throws InterruptedException {
-      waitVisibility(By.cssSelector("img[alt='google-download']"));
-      WebElement google = driver.findElement(By.cssSelector("li.list-btn__item:nth-child(1) > button:nth-child(1) > img:nth-child(1)"));
-        WebElement appstore = driver.findElement(By.cssSelector("li.list-btn__item:nth-child(2) > button:nth-child(1) > img:nth-child(1)"));
-        WebElement revert = driver.findElement(By.cssSelector(".gdx-replace-button"));
-        revert.click();
-        WebElement exchButton = driver.findElement(By.cssSelector(".exchange-button"));
+      waitVisibility(By.cssSelector(".style_btn__1Thp0"));
+      WebElement head = driver.findElement(By.cssSelector("div.style_wrapper__2Y0Uz:nth-child(1)"));
+      head.isDisplayed();
+      WebElement sear = driver.findElement(By.cssSelector(".style_btn__1Thp0"));
+      sear.click();
 
 
 
