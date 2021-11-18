@@ -45,12 +45,11 @@ public class BaseTest {
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problem
         options.addArguments("--remote-debugging-port=9222");
         driver = new FirefoxDriver(options);
-        driver.manage().window().setSize(new Dimension(1600, 900));
+        driver.manage().window().maximize();
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
         cartPage = PageFactory.initElements(driver, CartPage.class);
         checkOutPage = PageFactory.initElements(driver, CheckOutPage.class);
-
      }
     @AfterMethod
     public void close() {

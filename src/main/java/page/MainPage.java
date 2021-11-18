@@ -34,7 +34,7 @@ public class MainPage extends BasePage {
     @FindBy(css = "buttonInCart")
     public WebElement productNameOnMain;
 
-    @FindBy(css = "span[class='style_logo__XsOQq'][title='Color-it']")
+    @FindBy(css = "span[class='style_logo__XsOQq']")
     public WebElement logo;
 
     @FindBy(css = "span[class='style_btnCartIcon__1Kkdo']")
@@ -79,12 +79,12 @@ public class MainPage extends BasePage {
 
       public MainPage verifyMainPage() {
       logo.isDisplayed();
-          categoryMenu.isDisplayed();
+      categoryMenu.isDisplayed();
 
 
 //Godex create transactions
 
-/*    exchButton.click();
+/*       exchButton.click();
           adress.click();
           adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
           exchButton2.click(); */
