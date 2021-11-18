@@ -34,7 +34,7 @@ public class MainPage extends BasePage {
     @FindBy(css = "buttonInCart")
     public WebElement productNameOnMain;
 
-    @FindBy(css = "span[class='style_logo__XsOQq']")
+    @FindBy(css = "span[class='style_logoLink__1S1hB']")
     public WebElement logo;
 
     @FindBy(css = "span[class='style_btnCartIcon__1Kkdo']")
@@ -79,7 +79,6 @@ public class MainPage extends BasePage {
 
       public MainPage verifyMainPage() {
       logo.isDisplayed();
-      categoryMenu.isDisplayed();
 
 
 //Godex create transactions
