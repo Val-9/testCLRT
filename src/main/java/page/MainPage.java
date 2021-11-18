@@ -63,22 +63,6 @@ public class MainPage extends BasePage {
         super(driver) ;
     }
 
-    public String captureScreen() {
-        String path;
-        WebDriver driver = new FirefoxDriver();
-        try {
-            WebDriver webDriver = new Augmenter().augment(driver);
-            File source = ((TakesScreenshot) webDriver).getScreenshotAs(OutputType.FILE);
-            path = "./target/screenshots/" + source.getName();
-            FileUtils.copyFile(source, new File(path));
-        } catch (IOException e) {
-            path = "Failed to capture screenshot: " + e.getMessage();
-        }
-        return path;
-
-
-    }
-
         public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
