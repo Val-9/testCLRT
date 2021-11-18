@@ -94,6 +94,8 @@ public class MainPage extends BasePage {
         WebElement appstore = driver.findElement(By.cssSelector("li.list-btn__item:nth-child(2) > button:nth-child(1) > img:nth-child(1)"));
         WebElement revert = driver.findElement(By.cssSelector(".gdx-replace-button"));
         revert.click();
+        WebElement exchButton = driver.findElement(By.cssSelector(".exchange-button"));
+
 
 
 
