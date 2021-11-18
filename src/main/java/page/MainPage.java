@@ -89,10 +89,17 @@ public class MainPage extends BasePage {
     }
 
     public MainPage verifyMainPage() throws InterruptedException {
-        Thread.sleep(10000);
       waitVisibility(By.cssSelector("img[alt='google-download']"));
-      WebElement logo =  driver.findElement(By.cssSelector("img[alt='google-download']"));
-      logo.click();
+      WebElement google = driver.findElement(By.cssSelector("li.list-btn__item:nth-child(1) > button:nth-child(1) > img:nth-child(1)"));
+      google.click();
+        WebElement close = driver.findElement(By.cssSelector(".gdx-close-button > img:nth-child(1)"));
+      close.click();
+        WebElement appstore = driver.findElement(By.cssSelector("li.list-btn__item:nth-child(2) > button:nth-child(1) > img:nth-child(1)"));
+        appstore.click();
+        close.click();
+        WebElement revert = driver.findElement(By.cssSelector(".gdx-replace-button"));
+        revert.click();
+
 
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
