@@ -56,6 +56,13 @@ public class MainPage extends BasePage {
     @FindBy(css = "input[class='style_input__32Nxn inputDefault'][name = 'qunatity']")
     public WebElement quantity;
 
+    @FindBy(css = ".exchange-button")
+    public WebElement exchButton;
+    @FindBy(css = ".c-input")
+    public WebElement adress;
+    @FindBy(css = ".c-btn")
+    public WebElement exchButton2;
+
 
     String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
 
@@ -73,13 +80,11 @@ public class MainPage extends BasePage {
 
       public MainPage verifyMainPage() throws InterruptedException {
         Thread.sleep(10000);
-      WebElement exchButton = driver.findElement(By.cssSelector(".exchange-button"));
           exchButton.click();
-      WebElement adress = driver.findElement(By.cssSelector(".c-input"));
-      adress.click();
-      adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
+          adress.click();
+          adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
           Thread.sleep(3000);
-          WebElement exchButton2 = driver.findElement(By.cssSelector(".c-btn"));
+          exchButton2.click();
           Thread.sleep(5000);
 
 
