@@ -45,7 +45,7 @@ public class BaseTest {
     //  options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
         options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        driver = new FirefoxDriver(options);
+        driver = new ChromeDriver(options);
         driver.manage().window().setSize(new Dimension(1600, 900));
         main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
