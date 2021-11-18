@@ -91,9 +91,11 @@ public class MainPage extends BasePage {
     public MainPage verifyMainPage() throws InterruptedException {
         Thread.sleep(10000);
       waitVisibility(By.cssSelector("img[alt='google-download']"));
-      WebElement logo =  driver.findElement(By.xpath("img[alt='google-download']"));
-        System.out.println(logo.getText());
-        logo.click();
+      WebElement logo =  driver.findElement(By.cssSelector("img[alt='google-download']"));
+      logo.click();
+        WebElement head =  driver.findElement(By.cssSelector("p[class='Download godex application']"));
+
+        System.out.println(head.getText());
         System.out.println(captureScreen());
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
