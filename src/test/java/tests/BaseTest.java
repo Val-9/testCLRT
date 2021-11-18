@@ -1,6 +1,7 @@
 package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,7 +32,7 @@ public class BaseTest {
 
     @BeforeMethod
 
-    public void  start() throws MalformedURLException {
+    public void  start() throws MalformedURLException, InterruptedException {
        //   WebDriverManager.chromedriver().setup();
 
       //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
@@ -42,14 +43,25 @@ public class BaseTest {
         System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
 
         FirefoxOptions options = new FirefoxOptions();
-     //   ChromeOptions options = new ChromeOptions();
+     // ChromeOptions options = new ChromeOptions();
     //  options.addArguments("--headless");
         options.addArguments("--no-sandbox"); // Bypass OS security mode
-        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-        RemoteWebDriver driver= new RemoteWebDriver(new URL("/usr/local/bin/geckodriver"), options);
-        //    driver = new FirefoxDriver(options);
+        options.addArguments("--disable-dev-shm-usage"); // overcome limited resource problem
+        driver = new FirefoxDriver(options);
         driver.manage().window().setSize(new Dimension(1600, 900));
-        main = PageFactory.initElements(driver, MainPage.class);
+
+
+            driver.get("https://color-it.ua/");
+            System.out.println("Title is :" + " " + driver.getTitle());
+            System.out.println("Size is :" + " " + driver.manage().window().getSize());
+        Thread.sleep(30000);
+        WebElement head = driver.findElement(By.cssSelector("div[class ='swiper-slide']"));
+        head.isDisplayed();
+
+
+
+
+            main = PageFactory.initElements(driver, MainPage.class);
         productCardPage = PageFactory.initElements(driver, ProductCardPage.class);
         cartPage = PageFactory.initElements(driver, CartPage.class);
         checkOutPage = PageFactory.initElements(driver, CheckOutPage.class);
