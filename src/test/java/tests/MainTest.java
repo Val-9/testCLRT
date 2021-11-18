@@ -12,17 +12,14 @@ import page.MainPage;
 
 
 public class MainTest extends BaseTest {
-    WebDriver driver = new FirefoxDriver();
 
 
     @Test
     public void MainPageTest() throws InterruptedException {
 
         main
-                .goToMain();
-                WebElement test = driver.findElement(By.cssSelector("div.style_wrapper__2Y0Uz:nth-child(1) > div:nth-child(1)"));
-                test.isDisplayed();
-                main.verifyMainPage();
+                .goToMain()
+                .verifyMainPage();
     }
 
     @Test (groups = {"smoke"})
