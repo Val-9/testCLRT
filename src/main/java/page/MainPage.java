@@ -71,21 +71,17 @@ public class MainPage extends BasePage {
     }
 
         public MainPage goToMain() throws InterruptedException {
-        driver.get("https://godex.io/");
+        driver.get("https://color-it.ua");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
-
         return this;
     }
 
-      public MainPage verifyMainPage() throws InterruptedException {
-        Thread.sleep(10000);
+      public MainPage verifyMainPage() {
           exchButton.click();
           adress.click();
           adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
-          Thread.sleep(3000);
           exchButton2.click();
-          Thread.sleep(5000);
 
 
 
