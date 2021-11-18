@@ -70,13 +70,18 @@ public class MainPage extends BasePage {
         super(driver) ;
     }
 
-        public MainPage goToMain() throws InterruptedException, IOException {
+        public MainPage goToMain() {
         driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
-            TakesScreenshot ts = (TakesScreenshot)driver;
-            File source = ts.getScreenshotAs(OutputType.FILE);
-            FileUtils.copyFile(source, new File("./target/screenshots/Screen.png"));
+           try{
+               TakesScreenshot ts = (TakesScreenshot)driver;
+               File source = ts.getScreenshotAs(OutputType.FILE);
+               FileUtils.copyFile(source, new File("./target/screenshots/Screen.png"));
+           }
+            catch ( IOException exc) {
+
+            }
         return this;
     }
 
