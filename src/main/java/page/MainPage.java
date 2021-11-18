@@ -90,10 +90,10 @@ public class MainPage extends BasePage {
 
     public MainPage verifyMainPage() throws InterruptedException {
         Thread.sleep(10000);
-      waitVisibility(By.xpath("//li[normalize-space(.)='Fixed Rate']"));
-      WebElement logo =  driver.findElement(By.xpath("//button[normalize-space(.)='Fixed Rate']"));
+      waitVisibility(By.cssSelector("img[alt='google-download']"));
+      WebElement logo =  driver.findElement(By.xpath("img[alt='google-download']"));
         System.out.println(logo.getText());
-      logo.click();
+        logo.click();
         System.out.println(captureScreen());
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
