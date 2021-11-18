@@ -83,7 +83,7 @@ public class MainPage extends BasePage {
         driver.get("https://godex.io");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
-
+        this.captureScreen();
 
         return this;
     }
@@ -93,10 +93,7 @@ public class MainPage extends BasePage {
       waitVisibility(By.cssSelector("img[alt='google-download']"));
       WebElement logo =  driver.findElement(By.cssSelector("img[alt='google-download']"));
       logo.click();
-        WebElement head =  driver.findElement(By.cssSelector("p[class='Download godex application']"));
 
-        System.out.println(head.getText());
-        System.out.println(captureScreen());
 
      /*   Assert.assertTrue(header.getText().contains(headerText));
 
