@@ -74,10 +74,11 @@ public class MainPage extends BasePage {
         driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
-           try{
+
+        try{
                TakesScreenshot ts = (TakesScreenshot)driver;
                File source = ts.getScreenshotAs(OutputType.FILE);
-               FileUtils.copyFile(source, new File("/public/screen123"));
+               FileUtils.copyFile(source, new File("/public/screen123/screen.png"));
            }
             catch ( IOException exc) {
 
