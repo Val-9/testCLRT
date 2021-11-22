@@ -8,7 +8,7 @@
         <classes>
             <class name="tests.MainTest">
             <methods>
-                <include name="MainPageTest"/>
+                <include name="SearchTest"/>
             </methods>
             </class>
         </classes>
