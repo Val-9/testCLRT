@@ -70,11 +70,11 @@ public class MainPage extends BasePage {
         super(driver) ;
     }
 
-        public MainPage goToMain() {
+        public MainPage goToMain() throws InterruptedException {
         driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
-
+        Thread.sleep(20000);
         try{
                TakesScreenshot ts = (TakesScreenshot)driver;
                File source = ts.getScreenshotAs(OutputType.FILE);
