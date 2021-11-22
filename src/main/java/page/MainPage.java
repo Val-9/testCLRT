@@ -77,7 +77,7 @@ public class MainPage extends BasePage {
            try{
                TakesScreenshot ts = (TakesScreenshot)driver;
                File source = ts.getScreenshotAs(OutputType.FILE);
-               FileUtils.copyFile(source, new File("/home/color-it/www/colorit-api-dev/public/screen123"));
+               FileUtils.copyFile(source, new File("/public/screen123"));
            }
             catch ( IOException exc) {
 
