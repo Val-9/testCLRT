@@ -6,8 +6,10 @@
 
 
         <classes>
-            <class name="tests.End2End">
-            </class>
+            <class name="tests.End2End"></class>
+            <class name="tests.CheckOutTest"></class>
+            <class name="tests.MainTest"></class>
+            <class name="tests.CartTest"></class>
         </classes>
     </test>
 </suite>

@@ -13,12 +13,10 @@ import java.io.IOException;
 
 public class MainPage extends BasePage {
 
-
-
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(1)")
     private WebElement header;
 
-    @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(2)")
+    @FindBy(xpath = "//div[contains(@class, 'style_menuBox')]")
     private WebElement categoryMenu;
 
     @FindBy(css = "div.style_wrapper__2Y0Uz:nth-child(3)")
@@ -34,7 +32,7 @@ public class MainPage extends BasePage {
     @FindBy(css = "buttonInCart")
     public WebElement productNameOnMain;
 
-    @FindBy(css = "img[alt='Color-it']")
+    @FindBy(css = "img[src='/logo.svg'][alt='Color-it']")
     public WebElement logo;
 
     @FindBy(css = "span[class='style_btnCartIcon__1Kkdo']")
@@ -56,13 +54,9 @@ public class MainPage extends BasePage {
     @FindBy(css = "input[class='style_input__32Nxn inputDefault'][name = 'qunatity']")
     public WebElement quantity;
 
-    @FindBy(css = ".exchange-button")
-    public WebElement exchButton;
-    @FindBy(css = ".c-input")
-    public WebElement adress;
-    @FindBy(css = "button[class='c-btn c-btn--regular c-btn--mw-234 c-btn--fw-tm step-btn--shadow c-btn--h-72']")
-    public WebElement exchButton2;
 
+    @FindBy(xpath = "//div[contains(@class, 'style_menuBox')]")
+    WebElement h1CheckOut;
 
     String headerText = "О Компании\n" + "Доставка и оплата\n" + "Акции\n" + "Отзывы\n" + "Контакты\n" + "Напишите нам в\n" + "Viber\n" + "или\n" + "Telegram";
 
@@ -86,10 +80,9 @@ public class MainPage extends BasePage {
     }
 
       public MainPage verifyMainPage() throws InterruptedException {
-        waitVisibility(By.cssSelector(""));
+        waitVisibility(By.xpath("//div[contains(@class, 'style_menuBox')]"));
         Assert.assertTrue(header.getText().contains(headerText));
         Assert.assertEquals(categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
-        System.out.println(headerOrderInfo.getText());
         Assert.assertEquals(headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
         return this;
     }

@@ -1,10 +1,6 @@
-page\ProductCardPage.class
-page\CheckOutPage.class
 tests\CartTest.class
 tests\MainTest.class
-page\CartPage.class
 tests\CheckOutTest.class
-page\BasePage.class
+tests\Test.class
 tests\BaseTest.class
 tests\End2End.class
-page\MainPage.class

@@ -30,12 +30,11 @@ public class BaseTest {
     @BeforeMethod
 
     public void  start() throws MalformedURLException, InterruptedException {
-       //   WebDriverManager.chromedriver().setup();
 
-      //    System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
-      //    System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
-        //  System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
-      //
+        //   WebDriverManager.chromedriver().setup();
+        //   System.setProperty("webdriver.chrome.driver", "C:\\QA\\AutoTesting\\Color-it\\chromedriver.exe");
+        //   System.setProperty("webdriver.gecko.driver", "C:\\QA\\AutoTesting\\Color-it\\geckodriver.exe");
+      //    System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
           System.setProperty("webdriver.firefox.driver", "/usr/local/bin/geckodriver");
           FirefoxOptions options = new FirefoxOptions();
      //   ChromeOptions options = new ChromeOptions();

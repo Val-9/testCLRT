@@ -3,15 +3,6 @@
 <suite name="Failed suite [All Test Suite]" guice-stage="DEVELOPMENT" verbose="0">
   <test thread-count="5" name="C:/QA/AutoTesting/Color-it(failed)" verbose="0">
     <classes>
-      <class name="tests.MainTest">
-        <methods>
-          <include name="addToCart"/>
-          <include name="addToCartAfterSearch"/>
-          <include name="close"/>
-          <include name="SearchTest"/>
-          <include name="start"/>
-        </methods>
-      </class> <!-- tests.MainTest -->
       <class name="tests.CheckOutTest">
         <methods>
           <include name="close"/>
@@ -19,20 +10,13 @@
           <include name="start"/>
         </methods>
       </class> <!-- tests.CheckOutTest -->
-      <class name="tests.CartTest">
+      <class name="tests.MainTest">
         <methods>
+          <include name="MainPageTest"/>
           <include name="close"/>
-          <include name="verifyCartPage"/>
           <include name="start"/>
         </methods>
-      </class> <!-- tests.CartTest -->
-      <class name="tests.End2End">
-        <methods>
-          <include name="close"/>
-          <include name="end2end"/>
-          <include name="start"/>
-        </methods>
-      </class> <!-- tests.End2End -->
+      </class> <!-- tests.MainTest -->
     </classes>
   </test> <!-- C:/QA/AutoTesting/Color-it(failed) -->
 </suite> <!-- Failed suite [All Test Suite] -->

@@ -1,0 +1,5 @@
+page\ProductCardPage.class
+page\CheckOutPage.class
+page\CartPage.class
+page\MainPage.class
+page\BasePage.class
