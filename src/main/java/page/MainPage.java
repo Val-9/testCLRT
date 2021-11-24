@@ -74,7 +74,6 @@ public class MainPage extends BasePage {
         driver.get("https://color-it.ua/");
         System.out.println("Title is :" + " " + driver.getTitle());
         System.out.println("Size is :" + " " + driver.manage().window().getSize());
-        Thread.sleep(20000);
         try{
                TakesScreenshot ts = (TakesScreenshot)driver;
                File source = ts.getScreenshotAs(OutputType.FILE);
@@ -87,23 +86,11 @@ public class MainPage extends BasePage {
     }
 
       public MainPage verifyMainPage() throws InterruptedException {
-
-
-         //Godex create transactions
-           exchButton.click();
-           adress.click();
-           adress.sendKeys("0x431c053281dee679cf597cad21eb8ea6b2e58f91");
-           exchButton2.click();
-           Thread.sleep(10000);
-           WebElement error = driver.findElement(By.cssSelector("div[class='c-text c-text--fs-24 c-text--fw-700']"));
-          System.out.println(error.getText());
-
-     /*   Assert.assertTrue(header.getText().contains(headerText));
-
+        waitVisibility(By.cssSelector(""));
+        Assert.assertTrue(header.getText().contains(headerText));
         Assert.assertEquals(categoryMenu.getText(), "ТОВАРЫ ДЛЯ ШКОЛЫ\n" + "ТОВАРЫ ДЛЯ ОФИСА\n" + "СЕЗОННЫЕ ТОВАРЫ\n" + "ХОЗЯЙСТВЕННЫЕ ТОВАРЫ");
         System.out.println(headerOrderInfo.getText());
         Assert.assertEquals(headerOrderInfo.getText(), "Бесплатная доставка для заказов от\n" + " 5000 грн\n" + "Сумма минимального заказа\n" + " 1500 грн\n" + "Возврат и обмен в течение\n" + " 7 дней");
-        return this; */
         return this;
     }
 

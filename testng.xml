@@ -6,10 +6,7 @@
 
 
         <classes>
-            <class name="tests.MainTest">
-            <methods>
-                <include name="SearchTest"/>
-            </methods>
+            <class name="tests.End2End">
             </class>
         </classes>
     </test>

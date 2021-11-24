@@ -35,7 +35,7 @@ public class CheckOutPage extends BasePage {
     @FindBy(css = "div[class='style_heading__1rckW heading']")
     public WebElement header; // Заголовок добавить получателя
 
-    @FindBy(css = "div[class='style_heading__2AwXF heading']")
+    @FindBy(xpath = "//div[normalize-space(text())='ОТЛИЧНО, ВСЕ ПОЛУЧИЛОСЬ!']")
     public WebElement headerSuccessOrder; // Заголовок "Отлично все получилось"
 
     @FindBy(css = "button[class='style_addBtn__1a-1o linkBtn']")
@@ -196,6 +196,7 @@ public class CheckOutPage extends BasePage {
     }
 
     public CheckOutPage chooseWarehouse(WebElement element) {
+        waitVisibility(By.cssSelector("div[id='warehouse']"));
         chooseWarehouse.click();
         element.click();
         return this;
@@ -208,6 +209,7 @@ public class CheckOutPage extends BasePage {
     }
 
         public CheckOutPage verifySuccessMassage() throws InterruptedException {
+        waitVisibility(By.xpath("//div[normalize-space(text())='ОТЛИЧНО, ВСЕ ПОЛУЧИЛОСЬ!']"));
         headerSuccessOrder.isDisplayed();
         Assert.assertEquals(headerSuccessOrder.getText(), "ОТЛИЧНО, ВСЕ ПОЛУЧИЛОСЬ!");
         Assert.assertEquals(driver.getCurrentUrl(), "https://color-it.ua/checkout/success");

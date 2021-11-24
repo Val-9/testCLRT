@@ -11,7 +11,7 @@ import org.testng.Assert;
 public class CartPage extends BasePage {
 
 
-    @FindBy(css = "div[class='style_heading__1pFPz heading']")
+        @FindBy(xpath = "//div[normalize-space(text())='Корзина']")
     WebElement h1;
 
     @FindBy(css = "a[class='style_name__btju7 linkDefault']")
@@ -27,7 +27,7 @@ public class CartPage extends BasePage {
     @FindBy(css = "button[class='style_btn__2I-5X btnDefault']")
     public WebElement checkOutButton;
 
-    @FindBy(css = "div[class='style_heading__3jKOc heading']")
+    @FindBy(xpath = "//div[normalize-space(text())='Оформление заказа']")
     WebElement h1CheckOut;
 
     String senderPhoneInputCssValue = "input[id='phone'][name = 'phone']";
@@ -39,6 +39,7 @@ public class CartPage extends BasePage {
 
 
         public CartPage verifyCartPage() {
+        waitVisibility(By.xpath("//div[normalize-space(text())='Корзина']"));
         h1.isDisplayed();
         productName.isDisplayed();
         Assert.assertEquals(h1.getText(), "Корзина");
@@ -49,11 +50,12 @@ public class CartPage extends BasePage {
     public CartPage checkMinAmountOrder() throws InterruptedException {
 
         String stringAmount = totalAmountInCart.getText(); // беру строку
-        String stringAmountOnlyInt = stringAmount.replace("грн", "");  // обрезаю грн
+        String stringAmountOnlyInt = stringAmount.replace("₴", "");  // обрезаю грн
         float intAmount = Float.parseFloat(stringAmountOnlyInt); // преобразую в число с точкой
         // если сумма больше 1500, на чек-аут
             if (intAmount>1500) {
             checkOutButton.click();
+            waitVisibility(By.cssSelector("div[class='style_heading__3jKOc heading']"));
             Assert.assertEquals(h1CheckOut.getText(), "Оформление заказа");
         }   // если меньше , то жмем на кнопку и проверем что есть сообщение о минимальном заказе и остаесмся в корзине
             else if (intAmount<1500) {
@@ -65,11 +67,6 @@ public class CartPage extends BasePage {
         waitVisibility(By.cssSelector(senderPhoneInputCssValue));
             return this;
         }
-
-
-
-
-
     }
 
 
